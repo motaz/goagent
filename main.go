@@ -22,6 +22,10 @@ func main() {
 	http.HandleFunc("/ModifyNode", modifyNode)
 	http.HandleFunc("/ReceiveFile", receiveFile)
 
+	http.HandleFunc("/AddAgent", addAgent)
+	http.HandleFunc("/RemoveAgent", removeAgent)
+	http.HandleFunc("/IsAgentExist", isAgentExist)
+
 	err := http.ListenAndServe(":9091", nil)
 	if err != nil {
 		writeLog("Error in ListenAndServe: " + err.Error())
