@@ -1,4 +1,8 @@
-// goagent project main.go
+// GoAgent
+// SimpleTrunk web service to manage Asterisk
+// Origional code written by Motaz Abdel Azim
+// Last update 15.March.2017
+
 package main
 
 import (
