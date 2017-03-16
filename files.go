@@ -439,10 +439,7 @@ func modifyNode(w http.ResponseWriter, r *http.Request) {
 
 		// write into file
 		f, er := os.Create(fileName)
-		if er == nil {
-
-			//f.WriteString(jrequest.Content)
-		} else {
+		if er != nil {
 			result.Success = false
 			result.Errorcode = 2
 			result.Message = er.Error()
@@ -451,6 +448,8 @@ func modifyNode(w http.ResponseWriter, r *http.Request) {
 		started := false
 		found := false
 		for i := 0; i < len(lines); i++ {
+
+			// write new node contents after finding it's header
 			if (!found) && strings.Contains(lines[i], jrequest.Nodename) {
 				started = true
 				found = true
@@ -534,6 +533,79 @@ func receiveFile(w http.ResponseWriter, r *http.Request) {
 			Shell(command)
 		}
 		result.Message = "written"
+	}
+
+	output, _ := json.Marshal(result)
+
+	w.Write(output)
+
+}
+
+func removeNode(w http.ResponseWriter, r *http.Request) {
+
+	type JSONRequest struct {
+		Filename string
+		Nodename string
+	}
+
+	type JSONResult struct {
+		Success   bool   `json:"success"`
+		Errorcode int    `json:"errorcode"`
+		Result    string `json:"result"`
+		Message   string `json:"message"`
+	}
+
+	result := JSONResult{true, 0, "", ""}
+
+	w.Header().Add("Content-Type", "text/html")
+
+	body, _ := ioutil.ReadAll(r.Body)
+	var jrequest JSONRequest
+	er := json.Unmarshal(body, &jrequest)
+	if er != nil {
+		result.Success = false
+		result.Errorcode = 1
+		result.Message = er.Error()
+	} else {
+
+		backupFile(jrequest.Filename)
+
+		// read file first
+		fileName := getDefaultConfigFileName(jrequest.Filename)
+		content, err := ioutil.ReadFile(fileName)
+		if err != nil {
+			writeLog("Error in modifyNode: " + err.Error())
+		}
+		lines := strings.Split(string(content), "\n")
+
+		// write into file
+		f, er := os.Create(fileName)
+		if er != nil {
+			result.Success = false
+			result.Errorcode = 2
+			result.Message = er.Error()
+		}
+
+		started := false
+		found := false
+		for i := 0; i < len(lines); i++ {
+
+			// Skip node after finding it's header
+			if (!found) && strings.Contains(lines[i], jrequest.Nodename) {
+				started = true
+				found = true
+				// Skipping node lines
+
+			} else if started && strings.Contains(lines[i], "]") && strings.Index(lines[i], "[") < 5 {
+				started = false
+			}
+
+			if !started {
+				f.WriteString(lines[i] + "\n")
+			}
+
+		}
+		f.Close()
 	}
 
 	output, _ := json.Marshal(result)
