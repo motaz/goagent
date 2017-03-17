@@ -22,7 +22,7 @@ func main() {
 	// Nodes
 	http.HandleFunc("/AddNode", addNode)
 	http.HandleFunc("/ModifyNode", modifyNode)
-	http.HandleFunc("/RemoveNode", removeNode())
+	http.HandleFunc("/RemoveNode", removeNode)
 
 	// Files
 	http.HandleFunc("/ListFiles", ListFiles)
@@ -42,6 +42,16 @@ func main() {
 
 	// Databases
 	http.HandleFunc("/GetLastCDR", GetLastCDR)
+
+	//CDR
+	http.HandleFunc("/SetCDRConf", CDRConf)
+	http.HandleFunc("/GetCDRConf", GetCDRConf)
+	http.HandleFunc("/IsCDRConf", IsCDRConf)
+	http.HandleFunc("/GetCDRConfStatus", GetCDRConfStatus)
+	http.HandleFunc("/ModifyCDRConf", ModifyCDRConf)
+
+	//Test
+	http.HandleFunc("/Test", test)
 
 	err := http.ListenAndServe(":9091", nil)
 	if err != nil {

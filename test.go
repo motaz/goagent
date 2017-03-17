@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"net/http"
+)
 
-func test(){
-	fmt.Println("test")
+func test(w http.ResponseWriter, r *http.Request){
+	w.Header().Add("Content-Type", "text/html")
+	w.Write([]byte("Testing  Page"))
+
 }
