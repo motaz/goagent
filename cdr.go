@@ -39,7 +39,7 @@ func CDRConf(w http.ResponseWriter, r *http.Request) {
 		result.Message = er.Error()
 	} else {
 		//set cdr configuration in configuration file
-		if strings.Compare(dpath,"")!=0 {
+		if strings.Compare(dpath,"")!=0 && strings.Compare(spath,"")!=0 {
 			dpath=dpath[:len(dpath)-1]
 			spath=spath[:len(spath)-1]
 			msqlcont:="Description     = MySQL driver\nDriver          = "+
@@ -190,13 +190,18 @@ func GetCDRConf(w http.ResponseWriter,r *http.Request){
 		Message   string `json:"message"`
 	}
 	result := JSONResult{true, 0, "", ""}
+	keyf:=getConfigValueLocal("cdrkeyfield")
+	if keyf==""{
+		keyf="calldate"
+	}
 	w.Header().Add("Content-Type", "text/html")
 	result.Result=getConfigValueLocal("cdrdbserver")+":"+
 		getConfigValueLocal("cdruser")+":"+
 		getConfigValueLocal("cdrpass")+":"+
 		getConfigValueLocal("cdrdatabase")+":"+
 		getConfigValueLocal("cdrtable")+":"+
-		getConfigValueLocal("cdrkeyfield")
+		keyf
+
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
@@ -211,6 +216,8 @@ func IsCDRConf(w http.ResponseWriter,r *http.Request){
 	w.Header().Add("Content-Type", "text/html")
 	if strings.Compare(getConfigValueLocal("cdrdbserver"),"")== 0{
 		result.Success=false
+		result.Errorcode=1
+		result.Message="Not Config yet"
 	}
 	output, _ := json.Marshal(result)
 	w.Write(output)
@@ -227,6 +234,7 @@ func GetCDRConfStatus(w http.ResponseWriter,r *http.Request){
 	rs,_:=ExecCLI("odbc show all")
 	if !strings.Contains(rs,"Connected: Yes"){
 		result.Success=false
+		result.Errorcode=1
 		result.Message="Configuration Error"
 	}
 	output, _ := json.Marshal(result)
