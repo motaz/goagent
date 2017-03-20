@@ -50,6 +50,13 @@ func main() {
 	http.HandleFunc("/GetCDRConfStatus", GetCDRConfStatus)
 	http.HandleFunc("/ModifyCDRConf", ModifyCDRConf)
 
+	//AMI Configuration
+	http.HandleFunc("/GetAMIStatus", GetAMIStatus)
+	http.HandleFunc("/GetAMIUsersInfo",GetAMIUsersinfo)
+	http.HandleFunc("/GetAMIUserInfo",GetAMIUserInfo)
+	http.HandleFunc("/AddAMIUser",AddAMIUser)
+	http.HandleFunc("/ModifyAMIUser",ModifyAMIUser)
+
 	//Test
 	http.HandleFunc("/Test", test)
 

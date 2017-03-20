@@ -252,7 +252,7 @@ func modifyConfNode(fpath string, node string,ncontent string) string {
 		if (!found) && strings.Contains(lines[i], node) {
 			started = true
 			found = true
-			f.WriteString(node+"\n"+ncontent + "\n\n")
+			f.WriteString(ncontent + "\n\n")
 
 		} else if started && strings.Contains(lines[i], "]") && strings.Index(lines[i], "[") < 5 {
 			started = false
@@ -263,4 +263,30 @@ func modifyConfNode(fpath string, node string,ncontent string) string {
 		}
 	}
 	return e
+}
+func  getConfNodeProperty(fpath string,node string , prob string) (string,string){
+	var e string
+	var res string
+	f, err := os.Open(fpath)
+	if err != nil {
+		e=err.Error()
+		writeLog("Error in modifyNode: " + err.Error())
+	}
+	defer f.Close()
+	toggle:=false
+	sc := bufio.NewScanner(f)
+	for sc.Scan() {
+		li:=strings.TrimSpace(sc.Text())
+		if strings.Contains(li,"["){
+			toggle=false
+		}
+		if li==node{
+			toggle=true
+		}
+		if toggle && strings.Contains(li,prob){
+			spl:=strings.Split(li,"=")
+			res=spl[1]
+		}
+	}
+	return res,e
 }

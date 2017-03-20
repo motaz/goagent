@@ -68,7 +68,7 @@ func CDRConf(w http.ResponseWriter, r *http.Request) {
 				cdrtab+"\ndispositionstring=yes\nusegmtime=no\nhrtime=yes"
 			err=addConfNode("/etc/asterisk/cdr_odbc.conf","[global]",cdrodbccont)
 			backupFile("cdr_manager.conf")
-			err=modifyConfNode("/etc/asterisk/cdr_manager.conf","[general]","enabled = yes")
+			err=modifyConfNode("/etc/asterisk/cdr_manager.conf","[general]","[general]\nenabled = yes")
 			backupFile("cdr_adaptive_odbc.conf")
 			cdradcont:="connection=asterisk\ntable="+
 				cdrtab+"\nalias start="+
@@ -139,25 +139,25 @@ func ModifyCDRConf(w http.ResponseWriter, r *http.Request) {
 			dname:=jrequest.Dname
 			cdrtab:=jrequest.Ctab
 			cdrkey:=jrequest.Ckey
-			astdsncont:="Driver          = MySQL\nDescription     = MySQL Connector for Asterisk\nServer          = "+
-				ser+"\nPort            = 3306\nDatabase        = "+
-				dname+"\nusername        = "+
-				duname+"\npassword        = "+
-				dpass+"\nOption          = 3\nSocket          = /var/run/mysqld/mysqld.sock"
-			err=modifyConfNode("/etc/odbc.ini","[MySQL-asterisk]",astdsncont)
+			astdsncont:="Driver=MySQL\nDescription=MySQL Connector for Asterisk\nServer          = "+
+				ser+"\nPort=3306\nDatabase="+
+				dname+"\nusername="+
+				duname+"\npassword="+
+				dpass+"\nOption=3\nSocket=/var/run/mysqld/mysqld.sock"
+			err=modifyConfNode("/etc/odbc.ini","[MySQL-asterisk]","[MySQL-asterisk]\n"+astdsncont)
 			backupFile("res_odbc.conf")
 			rsodcont:="enabled=yes\ndsn=MySQL-asterisk\nusername="+
 				duname+"\npassword="+
 				dpass+"\npooling=no\nlimit=1\npre-connect=yes\nshare_connections=yes\nsanitysql=select 1\nisolation=repeatable_read"
-			err=modifyConfNode("/etc/asterisk/res_odbc.conf","[asterisk]",rsodcont)
+			err=modifyConfNode("/etc/asterisk/res_odbc.conf","[asterisk]","[asterisk]\n"+rsodcont)
 			backupFile("cdr_odbc.conf")
 			cdrodbccont:="dsn=asterisk\nloguniqueid=yes\ntable=" +
 				cdrtab+"\ndispositionstring=yes\nusegmtime=no\nhrtime=yes"
-			err=modifyConfNode("/etc/asterisk/cdr_odbc.conf","[global]",cdrodbccont)
+			err=modifyConfNode("/etc/asterisk/cdr_odbc.conf","[global]","[global]\n"+cdrodbccont)
 			cdradcont:="connection=asterisk\ntable="+
 				cdrtab+"\nalias start="+
 				cdrkey
-			err=modifyConfNode("/etc/asterisk/cdr_adaptive_odbc.conf","[asteriskcdr]",cdradcont)
+			err=modifyConfNode("/etc/asterisk/cdr_adaptive_odbc.conf","[asteriskcdr]","[asteriskcdr]\n"+cdradcont)
 			if strings.Compare(err,"")!=0 {
 				result.Success = false
 				result.Errorcode = 2
@@ -172,14 +172,9 @@ func ModifyCDRConf(w http.ResponseWriter, r *http.Request) {
 				setConfigParameter("/etc/simpletrunk/stagent.ini","cdrkeyfield",cdrkey)
 				ExecCLI("core reload")
 			}
-
-
 	}
-
 	output, _ := json.Marshal(result)
-
 	w.Write(output)
-
 }
 func GetCDRConf(w http.ResponseWriter,r *http.Request){
 
