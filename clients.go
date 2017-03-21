@@ -198,7 +198,7 @@ func GetAMIUserInfo(w http.ResponseWriter , r *http.Request) {
 
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		writeLog("Error in CallAMI: " + err.Error())
+		writeLog("Error in GetAMIInfo: " + err.Error())
 		result.Success = false
 		result.Errorcode = 1
 		result.Message = err.Error()
@@ -206,11 +206,10 @@ func GetAMIUserInfo(w http.ResponseWriter , r *http.Request) {
 		var jsonRequest JSONRequest
 		er := json.Unmarshal(body, &jsonRequest)
 		if er != nil {
-			writeLog("Erorr in CallAMI: " + er.Error())
+			writeLog("Erorr in GetAMIInfo: " + er.Error())
 			result.Success = false
 			result.Errorcode = 5
 			result.Message = er.Error()
-			writeLog("Error in CallAMI: " + result.Message)
 		} else {
 			sec, _ := getConfNodeProperty("/etc/asterisk/manager.conf",jsonRequest.Username, "secret")
 			if sec == "" {
@@ -271,8 +270,8 @@ func AddAMIUser(w http.ResponseWriter , r *http.Request) {
 			result.Success = false
 			result.Errorcode = 5
 			result.Message = er.Error()
-			writeLog("Error in AddAMIUser: " + result.Message)
 		} else {
+			backupFile("manager.conf")
 			user:="["+jsonRequest.Username+"]"
 			cont:="secret="+jsonRequest.Secret+"\nread="+
 			jsonRequest.Read+"\nwrite="+jsonRequest.Write+"\n"+
@@ -321,7 +320,7 @@ func ModifyAMIUser(w http.ResponseWriter , r *http.Request) {
 
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		writeLog("Error in AddAMIUser: " + err.Error())
+		writeLog("Error in ModifyAMIUser: " + err.Error())
 		result.Success = false
 		result.Errorcode = 1
 		result.Message = err.Error()
@@ -329,12 +328,12 @@ func ModifyAMIUser(w http.ResponseWriter , r *http.Request) {
 		var jsonRequest JSONRequest
 		er := json.Unmarshal(body, &jsonRequest)
 		if er != nil {
-			writeLog("Erorr in AddAMIUser: " + er.Error())
+			writeLog("Erorr in ModifyAMIUser: " + er.Error())
 			result.Success = false
 			result.Errorcode = 5
 			result.Message = er.Error()
-			writeLog("Error in AddAMIUser: " + result.Message)
 		} else {
+			backupFile("manager.conf")
 			user:=jsonRequest.Username
 			nuser:="["+jsonRequest.NUsername+"]"
 			cont:=nuser+"\nsecret="+jsonRequest.Secret+"\nread="+
@@ -346,7 +345,7 @@ func ModifyAMIUser(w http.ResponseWriter , r *http.Request) {
 					result.Success = false
 					result.Errorcode = 5
 					result.Message = err
-					writeLog("Error in AddAMIUser: " + result.Message)
+					writeLog("Error in ModifyAMIUser: " + result.Message)
 				}else {
 					result.Success = true
 					ExecCLI("core reload")
@@ -366,7 +365,7 @@ func getUsers() string{
 	var res string
 	f, err := os.Open("/etc/asterisk/manager.conf")
 	if err != nil {
-		writeLog("Error in modifyNode: " + err.Error())
+		writeLog("Error in Open File: " + err.Error())
 	}
 	defer f.Close()
 	sc := bufio.NewScanner(f)
@@ -382,7 +381,7 @@ func getAMIAdd(user string) string{
 	var res string
 	f, err := os.Open("/etc/asterisk/manager.conf")
 	if err != nil {
-		writeLog("Error in modifyNode: " + err.Error())
+		writeLog("Error in Open File: " + err.Error())
 	}
 	defer f.Close()
 	sc := bufio.NewScanner(f)
@@ -407,7 +406,7 @@ func isUserExist(user string) bool{
 	var res bool
 	f, err := os.Open("/etc/asterisk/manager.conf")
 	if err != nil {
-		writeLog("Error in modifyNode: " + err.Error())
+		writeLog("Error in Open File: " + err.Error())
 	}
 	defer f.Close()
 	sc := bufio.NewScanner(f)
