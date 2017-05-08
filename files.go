@@ -63,6 +63,7 @@ func GetFile(w http.ResponseWriter, r *http.Request) {
 		Errorcode int    `json:"errorcode"`
 		Content   string `json:"content"`
 		Message   string `json:"message"`
+		FileTime  string `json:"filetime"`
 	}
 	var result FilesResult
 
@@ -87,6 +88,12 @@ func GetFile(w http.ResponseWriter, r *http.Request) {
 	filename := fr.Filename
 	if !strings.Contains(filename, "/") {
 		filename = "/etc/asterisk/" + filename
+	}
+
+	// Read file modification time
+	info, er := os.Stat(filename)
+	if er == nil {
+		result.FileTime = info.ModTime().String()
 	}
 
 	file, er := os.Open(filename)
