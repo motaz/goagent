@@ -28,11 +28,10 @@
 package main
 
 import (
-	"errors"
+	"bufio"
 	"os"
 	"regexp"
 	"strings"
-	"bufio"
 
 	"io/ioutil"
 )
@@ -64,32 +63,27 @@ func Load(filename string, dest map[string]string) error {
 	}
 	buff := make([]byte, fi.Size())
 	f.Read(buff)
+
 	f.Close()
 	str := string(buff)
 	if !strings.HasSuffix(str, "\n") {
 		str = str + "\n"
 	}
-	s2 := re.FindAllString(str, -1)
+	//s2 := re.FindAllString(str, -1)
+	s2 := strings.Split(str, "\n")
 
 	for i := 0; i < len(s2); {
+
 		if strings.HasPrefix(s2[i], "#") {
 			i++
-		} else if strings.HasSuffix(s2[i], "=") {
-			key := strings.ToLower(s2[i])[0 : len(s2[i])-1]
-			i++
-			if strings.HasSuffix(s2[i], "\n") {
-				val := s2[i][0 : len(s2[i])-1]
-				if strings.HasSuffix(val, "\r") {
-					val = val[0 : len(val)-1]
-				}
-				i++
-				dest[key] = val
-			}
-		} else if strings.Index(" \t\r\n", s2[i][0:1]) > -1 {
+		} else if strings.Contains(s2[i], "=") {
+			key := strings.Trim(s2[i][0:strings.Index(s2[i], "=")], " ")
+			val := strings.Trim(s2[i][strings.Index(s2[i], "=")+1:len(s2[i])], " ")
 
 			i++
+			dest[key] = val
 		} else {
-			return errors.New("Unable to process line in cfg file containing " + s2[i])
+			i++
 		}
 	}
 	return nil
@@ -108,44 +102,46 @@ func GetConfigValue(configFile, name string) string {
 	}
 
 }
-func setConfigParameter(configfile string,param string,value string) string{
+func setConfigParameter(configfile string, param string, value string) string {
 	var res string
 	if _, err := os.Stat(configfile); os.IsNotExist(err) {
-		path:=strings.Split(configfile,"/")
-		dir,file:=getParentAndFile(path)
-		os.MkdirAll(dir,0666)
-		os.Create(dir+file)
+		path := strings.Split(configfile, "/")
+		dir, file := getParentAndFile(path)
+		os.MkdirAll(dir, 0666)
+		os.Create(dir + file)
 	}
-	if checkParameter(configfile,param){
-		nl:="\n"
-		upper:=getUpper(configfile,param)
-		lower:=getLower(configfile,param)
-		if strings.Compare(lower,"")==0 {
-			nl=""
+	if checkParameter(configfile, param) {
+		nl := "\n"
+		upper := getUpper(configfile, param)
+		lower := getLower(configfile, param)
+		if strings.Compare(lower, "") == 0 {
+			nl = ""
 		}
-		f, er1:= os.OpenFile(configfile, os.O_TRUNC+os.O_WRONLY, 0666)
-		if er1!= nil{
-			res=er1.Error()
+		f, er1 := os.OpenFile(configfile, os.O_TRUNC+os.O_WRONLY, 0666)
+		if er1 != nil {
+			res = er1.Error()
 		}
 		defer f.Close()
-		con:=param+"="+value+nl
-		_,er2:=f.WriteString(upper+con+lower+"\n")
-		if er2!= nil{
-			res=er2.Error()
+		con := param + "=" + value + nl
+		_, er2 := f.WriteString(upper + con + lower + "\n")
+		if er2 != nil {
+			res = er2.Error()
 		}
-	}else {
+	} else {
 		f, _ := os.OpenFile(configfile, os.O_APPEND+os.O_WRONLY, 0666)
 		defer f.Close()
-		con:=param+"="+value+"\n"
-		_,er:=f.WriteString(con)
-		if er!= nil{
-			res=er.Error()
+		con := param + "=" + value + "\n"
+		_, er := f.WriteString(con)
+		if er != nil {
+			res = er.Error()
 		}
 	}
 	return res
 
 }
-func getUpper(configfile string,param string) string {
+
+func getUpper(configfile string, param string) string {
+
 	fh, _ := os.Open(configfile)
 	defer fh.Close()
 	var res string
@@ -161,7 +157,8 @@ func getUpper(configfile string,param string) string {
 	}
 	return res
 }
-func getLower(configfile string,name string) string {
+
+func getLower(configfile string, name string) string {
 	fh, _ := os.Open(configfile)
 	defer fh.Close()
 	var res string
@@ -179,12 +176,13 @@ func getLower(configfile string,name string) string {
 		}
 
 	}
-	if strings.Compare(res,"")!=0 {
-		res = res[0:len(res)-1]
+	if strings.Compare(res, "") != 0 {
+		res = res[0 : len(res)-1]
 	}
 	return res
 }
-func checkParameter(configfile string,param string) bool {
+
+func checkParameter(configfile string, param string) bool {
 	fh, _ := os.Open(configfile)
 	var res bool
 	defer fh.Close()
@@ -199,22 +197,24 @@ func checkParameter(configfile string,param string) bool {
 	return res
 
 }
-func getParentAndFile(path []string) (string,string) {
+
+func getParentAndFile(path []string) (string, string) {
 	var dir string
 	var file string
 	var v string
-	for i:=0;i<len(path);i++{
-		if i!=len(path)-1 {
+	for i := 0; i < len(path); i++ {
+		if i != len(path)-1 {
 			v += path[i] + "/"
 		}
-		if i==len(path)-1{
-			file=path[i]
+		if i == len(path)-1 {
+			file = path[i]
 		}
 	}
-	dir=v
-	return dir,file
+	dir = v
+	return dir, file
 }
-func addConfNode(fpath string, node string,content string) string {
+
+func addConfNode(fpath string, node string, content string) string {
 	var e string
 	f, er := os.OpenFile(fpath, os.O_RDWR+os.O_APPEND+os.O_CREATE, 0666)
 	defer f.Close()
@@ -226,11 +226,12 @@ func addConfNode(fpath string, node string,content string) string {
 			writeLog("Error in addConfigNode: " + er.Error())
 		}
 	} else {
-		e=er.Error()
+		e = er.Error()
 	}
 	return e
 }
-func modifyConfNode(fpath string, node string,ncontent string) string {
+
+func modifyConfNode(fpath string, node string, ncontent string) string {
 	var e string
 	content, err := ioutil.ReadFile(fpath)
 	if err != nil {
@@ -242,7 +243,7 @@ func modifyConfNode(fpath string, node string,ncontent string) string {
 	f, er := os.Create(fpath)
 	defer f.Close()
 	if er != nil {
-		e= er.Error()
+		e = er.Error()
 	}
 	started := false
 	found := false
@@ -264,29 +265,30 @@ func modifyConfNode(fpath string, node string,ncontent string) string {
 	}
 	return e
 }
-func  getConfNodeProperty(fpath string,node string , prob string) (string,string){
+
+func getConfNodeProperty(fpath string, node string, prob string) (string, string) {
 	var e string
 	var res string
 	f, err := os.Open(fpath)
 	if err != nil {
-		e=err.Error()
+		e = err.Error()
 		writeLog("Error in modifyNode: " + err.Error())
 	}
 	defer f.Close()
-	toggle:=false
+	toggle := false
 	sc := bufio.NewScanner(f)
 	for sc.Scan() {
-		li:=strings.TrimSpace(sc.Text())
-		if strings.Contains(li,"["){
-			toggle=false
+		li := strings.TrimSpace(sc.Text())
+		if strings.Contains(li, "[") {
+			toggle = false
 		}
-		if li==node{
-			toggle=true
+		if li == node {
+			toggle = true
 		}
-		if toggle && strings.Contains(li,prob){
-			spl:=strings.Split(li,"=")
-			res=spl[1]
+		if toggle && strings.Contains(li, prob) {
+			spl := strings.Split(li, "=")
+			res = spl[1]
 		}
 	}
-	return res,e
+	return res, e
 }

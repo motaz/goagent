@@ -52,10 +52,13 @@ func main() {
 
 	//AMI Configuration
 	http.HandleFunc("/GetAMIStatus", GetAMIStatus)
-	http.HandleFunc("/GetAMIUsersInfo",GetAMIUsersinfo)
-	http.HandleFunc("/GetAMIUserInfo",GetAMIUserInfo)
-	http.HandleFunc("/AddAMIUser",AddAMIUser)
-	http.HandleFunc("/ModifyAMIUser",ModifyAMIUser)
+	http.HandleFunc("/GetAMIUsersInfo", GetAMIUsersinfo)
+	http.HandleFunc("/GetAMIUserInfo", GetAMIUserInfo)
+	http.HandleFunc("/AddAMIUser", AddAMIUser)
+	http.HandleFunc("/ModifyAMIUser", ModifyAMIUser)
+
+	//Schedule
+	http.HandleFunc("/IsWorkingTime", IsWorkingTime)
 
 	//Test
 	http.HandleFunc("/Test", test)
