@@ -509,7 +509,7 @@ func receiveFile(w http.ResponseWriter, r *http.Request) {
 		writeLog("Error in receiveFile: " + result.Message)
 	} else {
 
-		needConversion := strings.Contains(jrequest.Filename, ".wav")
+		needConversion := (strings.Contains(jrequest.Filename, ".wav")) && (!strings.Contains(jrequest.Dir, "/monitor"))
 		toDir := jrequest.Dir
 		if needConversion {
 			toDir = "/tmp/"
@@ -517,6 +517,7 @@ func receiveFile(w http.ResponseWriter, r *http.Request) {
 
 		// write into file
 		fileName := toDir + jrequest.Filename
+		os.MkdirAll(toDir, 0555)
 
 		f, er := os.Create(fileName)
 		if er == nil {
