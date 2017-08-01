@@ -32,7 +32,7 @@ func returnError(w http.ResponseWriter, errorMessage string) {
 }
 
 func GetLastCDR(w http.ResponseWriter, r *http.Request) {
-	writeLog("GetLastCDR")
+
 	cdrdbserver := getConfigValueLocal("cdrdbserver")
 	cdrdatabase := getConfigValueLocal("cdrdatabase")
 	cdruser := getConfigValueLocal("cdruser")
@@ -45,10 +45,10 @@ func GetLastCDR(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Add("Content-Type", "text/html")
 	connection := cdruser + ":" + cdrpass + "@tcp(" + cdrdbserver + ":3306)/" + cdrdatabase + "?charset=utf8"
-	writeLog(connection)
 
 	db, err := sql.Open("mysql", connection)
 	if err != nil {
+		println(err.Error())
 		writeLog("Error in GetLastCDR db connection: " + err.Error())
 
 		returnError(w, err.Error())

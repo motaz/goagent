@@ -56,8 +56,7 @@ func backupFile(sourceFileName string) {
 		os.Mkdir(path, 0777)
 	}
 
-	err := CopyFile("/etc/asterisk/"+sourceFileName, "/etc/asterisk/backup/"+
-		sourceFileName+"."+atime)
+	err := CopyFile("/etc/asterisk/"+sourceFileName, "/etc/asterisk/backup/"+sourceFileName+"."+atime)
 	if err != "" {
 		writeLog("Error while copy: " + err)
 	}
@@ -65,7 +64,10 @@ func backupFile(sourceFileName string) {
 }
 
 func getConfigValueLocal(name string) string {
-	return GetConfigValue("/etc/simpletrunk/stagent.ini", name)
+
+	val := GetConfigValue("/etc/simpletrunk/stagent.ini", name)
+	val = strings.Replace(val, "\r", "", -1)
+	return val
 }
 
 func getDefaultConfigFileName(filename string) string {
