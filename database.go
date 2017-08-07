@@ -82,6 +82,9 @@ func GetLastCDR(w http.ResponseWriter, r *http.Request) {
 			}
 			for rows.Next() {
 				slice := make([]string, size)
+				for i := 0; i < len(fields); i++ {
+					fields[i] = new(string)
+				}
 				rows.Scan(fields...)
 				for i := 0; i < size; i++ {
 					text := *(fields[i].(*string))
@@ -99,5 +102,4 @@ func GetLastCDR(w http.ResponseWriter, r *http.Request) {
 		}
 
 	}
-
 }
