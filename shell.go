@@ -39,7 +39,7 @@ func command(w http.ResponseWriter, r *http.Request) {
 			result.Message = er.Error()
 		} else {
 
-			resultStr, err := ExecCLI(c.Command)
+			resultStr, err := ExecCLI(c.Command, r.RemoteAddr)
 			if err != "" {
 				result.Success = false
 				result.Errorcode = 6

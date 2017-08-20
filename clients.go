@@ -1,12 +1,12 @@
 package main
 
 import (
+	"bufio"
 	"encoding/json"
 	"io/ioutil"
 	"net/http"
-	"strings"
 	"os"
-	"bufio"
+	"strings"
 )
 
 func callURL(url string, session string) (string, string) {
@@ -78,8 +78,9 @@ func CallAMI(w http.ResponseWriter, r *http.Request) {
 		} else {
 			// execute command
 			fullURL := amiurl + "?action=login&username=" + jsonRequest.Username + "&secret=" + jsonRequest.Secret
-
+			writeLog(r.RemoteAddr + ", CallAMI: " + fullURL)
 			resultStr, session := callURL(fullURL, "")
+			writeLog("Result: " + resultStr)
 			if strings.Contains(resultStr, "Success") {
 				jsonRequest.Command = strings.Replace(jsonRequest.Command, ":", "=", -1)
 				jsonRequest.Command = strings.Replace(jsonRequest.Command, "\n", "&", -1)
@@ -105,7 +106,7 @@ func CallAMI(w http.ResponseWriter, r *http.Request) {
 	w.Write(output)
 
 }
-func GetAMIStatus(w http.ResponseWriter , r *http.Request) {
+func GetAMIStatus(w http.ResponseWriter, r *http.Request) {
 	type JSONResult struct {
 		Success   bool   `json:"success"`
 		Errorcode int    `json:"errorcode"`
@@ -114,42 +115,42 @@ func GetAMIStatus(w http.ResponseWriter , r *http.Request) {
 	}
 	w.Header().Add("Content-Type", "text/html")
 	result := JSONResult{true, 0, "", ""}
-	manres,err:=ExecCLI("manager show settings")
-	if err!=""{
-		result.Success=false
-		result.Errorcode=1
-		result.Message="CLI Commnad Error"
+	manres, err := ExecCLI("manager show settings", r.RemoteAddr)
+	if err != "" {
+		result.Success = false
+		result.Errorcode = 1
+		result.Message = "CLI Commnad Error"
 	}
-	if strings.Contains(manres,"Manager (AMI):             Yes") && strings.Contains(manres,"Web Manager (AMI/HTTP):    Yes"){
-		result.Result="ok:ok"
+	if strings.Contains(manres, "Manager (AMI):             Yes") && strings.Contains(manres, "Web Manager (AMI/HTTP):    Yes") {
+		result.Result = "ok:ok"
 	}
-	if !strings.Contains(manres,"Manager (AMI):             Yes") && strings.Contains(manres,"Web Manager (AMI/HTTP):    Yes"){
-		result.Result="notok:ok"
+	if !strings.Contains(manres, "Manager (AMI):             Yes") && strings.Contains(manres, "Web Manager (AMI/HTTP):    Yes") {
+		result.Result = "notok:ok"
 	}
-	if strings.Contains(manres,"Manager (AMI):             Yes") && !strings.Contains(manres,"Web Manager (AMI/HTTP):    Yes"){
-		result.Result="ok:notok"
+	if strings.Contains(manres, "Manager (AMI):             Yes") && !strings.Contains(manres, "Web Manager (AMI/HTTP):    Yes") {
+		result.Result = "ok:notok"
 	}
-	if !strings.Contains(manres,"Manager (AMI):             Yes") && !strings.Contains(manres,"Web Manager (AMI/HTTP):    Yes"){
-		result.Result="notok:notok"
+	if !strings.Contains(manres, "Manager (AMI):             Yes") && !strings.Contains(manres, "Web Manager (AMI/HTTP):    Yes") {
+		result.Result = "notok:notok"
 	}
-	httpres,err2:=ExecCLI("http show status")
-	if err2!=""{
-		result.Success=false
-		result.Errorcode=1
-		result.Message="CLI Commnad Error"
+	httpres, err2 := ExecCLI("http show status", r.RemoteAddr)
+	if err2 != "" {
+		result.Success = false
+		result.Errorcode = 1
+		result.Message = "CLI Commnad Error"
 	}
-	if strings.Contains(httpres,"Server Enabled"){
-		result.Result+=":ok"
-	}else {
-		result.Result+=":notok"
+	if strings.Contains(httpres, "Server Enabled") {
+		result.Result += ":ok"
+	} else {
+		result.Result += ":notok"
 	}
-	if result.Result!=""{
-		result.Success=true
+	if result.Result != "" {
+		result.Success = true
 	}
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
-func GetAMIUsersinfo(w http.ResponseWriter , r *http.Request) {
+func GetAMIUsersinfo(w http.ResponseWriter, r *http.Request) {
 	type JSONResult struct {
 		Success   bool   `json:"success"`
 		Errorcode int    `json:"errorcode"`
@@ -159,30 +160,30 @@ func GetAMIUsersinfo(w http.ResponseWriter , r *http.Request) {
 	w.Header().Add("Content-Type", "text/html")
 	result := JSONResult{true, 0, "", ""}
 	var res string
-	users:=strings.Split(getUsers(),":")
-	for i:=0;i<len(users)-1;i++{
-		sec,_:=getConfNodeProperty("/etc/asterisk/manager.conf",users[i],"secret")
-		if sec==""{
-			sec="not set"
+	users := strings.Split(getUsers(), ":")
+	for i := 0; i < len(users)-1; i++ {
+		sec, _ := getConfNodeProperty("/etc/asterisk/manager.conf", users[i], "secret")
+		if sec == "" {
+			sec = "not set"
 		}
-		read,_:=getConfNodeProperty("/etc/asterisk/manager.conf",users[i],"read")
-		if read==""{
-			read="not set"
+		read, _ := getConfNodeProperty("/etc/asterisk/manager.conf", users[i], "read")
+		if read == "" {
+			read = "not set"
 		}
-		write,_:=getConfNodeProperty("/etc/asterisk/manager.conf",users[i],"write")
-		if write==""{
-			write="not set"
+		write, _ := getConfNodeProperty("/etc/asterisk/manager.conf", users[i], "write")
+		if write == "" {
+			write = "not set"
 		}
-		sec=strings.TrimSpace(sec)
-		read=strings.TrimSpace(read)
-		write=strings.TrimSpace(write)
-		res+=users[i]+":"+sec+":"+read+":"+write+";"
+		sec = strings.TrimSpace(sec)
+		read = strings.TrimSpace(read)
+		write = strings.TrimSpace(write)
+		res += users[i] + ":" + sec + ":" + read + ":" + write + ";"
 	}
-	result.Result=res
+	result.Result = res
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
-func GetAMIUserInfo(w http.ResponseWriter , r *http.Request) {
+func GetAMIUserInfo(w http.ResponseWriter, r *http.Request) {
 	type JSONRequest struct {
 		Username string
 	}
@@ -211,11 +212,11 @@ func GetAMIUserInfo(w http.ResponseWriter , r *http.Request) {
 			result.Errorcode = 5
 			result.Message = er.Error()
 		} else {
-			sec, _ := getConfNodeProperty("/etc/asterisk/manager.conf",jsonRequest.Username, "secret")
+			sec, _ := getConfNodeProperty("/etc/asterisk/manager.conf", jsonRequest.Username, "secret")
 			if sec == "" {
 				sec = "secret"
 			}
-			read, _ := getConfNodeProperty("/etc/asterisk/manager.conf",jsonRequest.Username, "read")
+			read, _ := getConfNodeProperty("/etc/asterisk/manager.conf", jsonRequest.Username, "read")
 			if read == "" {
 				read = "all"
 			}
@@ -223,7 +224,7 @@ func GetAMIUserInfo(w http.ResponseWriter , r *http.Request) {
 			if write == "" {
 				write = "all"
 			}
-			addi:= getAMIAdd(jsonRequest.Username)
+			addi := getAMIAdd(jsonRequest.Username)
 			if addi == "" {
 				addi = "deny=0.0.0.0/0.0.0.0\npermit=127.0.0.1/255.255.255.0"
 			}
@@ -231,20 +232,20 @@ func GetAMIUserInfo(w http.ResponseWriter , r *http.Request) {
 			read = strings.TrimSpace(read)
 			write = strings.TrimSpace(write)
 			addi = strings.TrimSpace(addi)
-			res += jsonRequest.Username + ":" + sec + ":" + read + ":" + write+":"+ addi
+			res += jsonRequest.Username + ":" + sec + ":" + read + ":" + write + ":" + addi
 		}
 	}
-	result.Result=res
+	result.Result = res
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
-func AddAMIUser(w http.ResponseWriter , r *http.Request) {
+func AddAMIUser(w http.ResponseWriter, r *http.Request) {
 	type JSONRequest struct {
 		Username string
-		Secret string
-		Read string
-		Write string
-		Addi string
+		Secret   string
+		Read     string
+		Write    string
+		Addi     string
 	}
 	type JSONResult struct {
 		Success   bool   `json:"success"`
@@ -272,41 +273,41 @@ func AddAMIUser(w http.ResponseWriter , r *http.Request) {
 			result.Message = er.Error()
 		} else {
 			backupFile("manager.conf")
-			user:="["+jsonRequest.Username+"]"
-			cont:="secret="+jsonRequest.Secret+"\nread="+
-			jsonRequest.Read+"\nwrite="+jsonRequest.Write+"\n"+
-			jsonRequest.Addi
-			if !isUserExist(user){
+			user := "[" + jsonRequest.Username + "]"
+			cont := "secret=" + jsonRequest.Secret + "\nread=" +
+				jsonRequest.Read + "\nwrite=" + jsonRequest.Write + "\n" +
+				jsonRequest.Addi
+			if !isUserExist(user) {
 
-				err:=addConfNode("/etc/asterisk/manager.conf",user,cont)
-				if err !=""{
+				err := addConfNode("/etc/asterisk/manager.conf", user, cont)
+				if err != "" {
 					result.Success = false
 					result.Errorcode = 5
 					result.Message = err
 					writeLog("Error in AddAMIUser: " + result.Message)
-				}else {
+				} else {
 					result.Success = true
-					ExecCLI("core reload")
+					ExecCLI("core reload", r.RemoteAddr)
 				}
-			}else {
+			} else {
 				result.Success = false
 				result.Errorcode = 3
 				result.Message = "This User is already exist"
 			}
 		}
 	}
-	result.Result=res
+	result.Result = res
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
-func ModifyAMIUser(w http.ResponseWriter , r *http.Request) {
+func ModifyAMIUser(w http.ResponseWriter, r *http.Request) {
 	type JSONRequest struct {
-		Username string
+		Username  string
 		NUsername string
-		Secret string
-		Read string
-		Write string
-		Addi string
+		Secret    string
+		Read      string
+		Write     string
+		Addi      string
 	}
 	type JSONResult struct {
 		Success   bool   `json:"success"`
@@ -334,34 +335,34 @@ func ModifyAMIUser(w http.ResponseWriter , r *http.Request) {
 			result.Message = er.Error()
 		} else {
 			backupFile("manager.conf")
-			user:=jsonRequest.Username
-			nuser:="["+jsonRequest.NUsername+"]"
-			cont:=nuser+"\nsecret="+jsonRequest.Secret+"\nread="+
-				jsonRequest.Read+"\nwrite="+jsonRequest.Write+"\n"+
+			user := jsonRequest.Username
+			nuser := "[" + jsonRequest.NUsername + "]"
+			cont := nuser + "\nsecret=" + jsonRequest.Secret + "\nread=" +
+				jsonRequest.Read + "\nwrite=" + jsonRequest.Write + "\n" +
 				jsonRequest.Addi
-			if !isUserExist(nuser) || (nuser==user){
-				err:=modifyConfNode("/etc/asterisk/manager.conf",user,cont)
-				if err !=""{
+			if !isUserExist(nuser) || (nuser == user) {
+				err := modifyConfNode("/etc/asterisk/manager.conf", user, cont)
+				if err != "" {
 					result.Success = false
 					result.Errorcode = 5
 					result.Message = err
 					writeLog("Error in ModifyAMIUser: " + result.Message)
-				}else {
+				} else {
 					result.Success = true
-					ExecCLI("core reload")
+					ExecCLI("core reload", r.RemoteAddr)
 				}
-			}else {
+			} else {
 				result.Success = false
 				result.Errorcode = 3
 				result.Message = "This User is already exist"
 			}
 		}
 	}
-	result.Result=res
+	result.Result = res
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
-func getUsers() string{
+func getUsers() string {
 	var res string
 	f, err := os.Open("/etc/asterisk/manager.conf")
 	if err != nil {
@@ -370,14 +371,14 @@ func getUsers() string{
 	defer f.Close()
 	sc := bufio.NewScanner(f)
 	for sc.Scan() {
-		li:=sc.Text()
-		if strings.Contains(li,"[")  && !strings.Contains(li,"[general]") && !strings.Contains(li,";["){
-			res+=strings.TrimSpace(li)+":"
+		li := sc.Text()
+		if strings.Contains(li, "[") && !strings.Contains(li, "[general]") && !strings.Contains(li, ";[") {
+			res += strings.TrimSpace(li) + ":"
 		}
 	}
 	return res
 }
-func getAMIAdd(user string) string{
+func getAMIAdd(user string) string {
 	var res string
 	f, err := os.Open("/etc/asterisk/manager.conf")
 	if err != nil {
@@ -385,24 +386,24 @@ func getAMIAdd(user string) string{
 	}
 	defer f.Close()
 	sc := bufio.NewScanner(f)
-	toggle:=false
+	toggle := false
 	for sc.Scan() {
-		li:=sc.Text()
-		if strings.Contains(li,"["){
-			toggle=false
+		li := sc.Text()
+		if strings.Contains(li, "[") {
+			toggle = false
 		}
-		if strings.Contains(li,user) {
-			toggle=true
+		if strings.Contains(li, user) {
+			toggle = true
 		}
-		if toggle && !strings.Contains(li,user) && !strings.Contains(li,";") && !strings.Contains(li,"read") && !strings.Contains(li,"write") && !strings.Contains(li,"secret"){
-			li=strings.TrimSpace(li)
-			res +=li+"\n"
+		if toggle && !strings.Contains(li, user) && !strings.Contains(li, ";") && !strings.Contains(li, "read") && !strings.Contains(li, "write") && !strings.Contains(li, "secret") {
+			li = strings.TrimSpace(li)
+			res += li + "\n"
 		}
 
 	}
 	return res
 }
-func isUserExist(user string) bool{
+func isUserExist(user string) bool {
 	var res bool
 	f, err := os.Open("/etc/asterisk/manager.conf")
 	if err != nil {
@@ -411,10 +412,10 @@ func isUserExist(user string) bool{
 	defer f.Close()
 	sc := bufio.NewScanner(f)
 	for sc.Scan() {
-		li:=sc.Text()
-		li=strings.TrimSpace(li)
-		if strings.Contains(li,user) && !strings.HasPrefix(li,";") {
-			res=true
+		li := sc.Text()
+		li = strings.TrimSpace(li)
+		if strings.Contains(li, user) && !strings.HasPrefix(li, ";") {
+			res = true
 		}
 	}
 	return res
