@@ -80,7 +80,7 @@ func CallAMI(w http.ResponseWriter, r *http.Request) {
 			fullURL := amiurl + "?action=login&username=" + jsonRequest.Username + "&secret=" + jsonRequest.Secret
 			writeLog(r.RemoteAddr + ", CallAMI: " + fullURL)
 			resultStr, session := callURL(fullURL, "")
-			writeLog("Result: " + resultStr)
+
 			if strings.Contains(resultStr, "Success") {
 				jsonRequest.Command = strings.Replace(jsonRequest.Command, ":", "=", -1)
 				jsonRequest.Command = strings.Replace(jsonRequest.Command, "\n", "&", -1)
@@ -106,6 +106,7 @@ func CallAMI(w http.ResponseWriter, r *http.Request) {
 	w.Write(output)
 
 }
+
 func GetAMIStatus(w http.ResponseWriter, r *http.Request) {
 	type JSONResult struct {
 		Success   bool   `json:"success"`
@@ -150,6 +151,7 @@ func GetAMIStatus(w http.ResponseWriter, r *http.Request) {
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
+
 func GetAMIUsersinfo(w http.ResponseWriter, r *http.Request) {
 	type JSONResult struct {
 		Success   bool   `json:"success"`

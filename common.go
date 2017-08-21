@@ -24,7 +24,6 @@ func Shell(command string) (string, string) {
 func ExecCLI(command string, remoteAddress string) (string, string) {
 	writeLog(remoteAddress + ", Executing CLI: " + command)
 	result, err := Shell("/usr/sbin/asterisk -rx '" + command + "'")
-	writeLog("Result: " + result)
 	return result, err
 }
 
