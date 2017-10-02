@@ -9,6 +9,13 @@ import (
 	"strings"
 )
 
+type AMIJSONResult struct {
+	Success   bool   `json:"success"`
+	Errorcode int    `json:"errorcode"`
+	Result    string `json:"result"`
+	Message   string `json:"message"`
+}
+
 func callURL(url string, session string) (string, string) {
 
 	var asession string = ""
@@ -45,24 +52,13 @@ func CallAMI(w http.ResponseWriter, r *http.Request) {
 		Command  string
 	}
 
-	type JSONResult struct {
-		Success   bool   `json:"success"`
-		Errorcode int    `json:"errorcode"`
-		Result    string `json:"result"`
-		Message   string `json:"message"`
-	}
-
-	result := JSONResult{true, 0, "", ""}
-	amiurl := GetConfigValue("/etc/simpletrunk/stagent.ini", "amiurl")
-	if amiurl[len(amiurl)-1] != '/' {
-		amiurl = amiurl + "/"
-	}
+	result := AMIJSONResult{true, 0, "", ""}
 
 	w.Header().Add("Content-Type", "text/html")
 
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
-		writeLog("Error in CallAMI: " + err.Error())
+		writeLog("Error in CallAMI parameters: " + err.Error())
 		result.Success = false
 		result.Errorcode = 1
 		result.Message = err.Error()
@@ -76,46 +72,20 @@ func CallAMI(w http.ResponseWriter, r *http.Request) {
 			result.Message = er.Error()
 			writeLog("Error in CallAMI: " + result.Message)
 		} else {
-			// execute command
-			fullURL := amiurl + "?action=login&username=" + jsonRequest.Username + "&secret=" + jsonRequest.Secret
-			writeLog(r.RemoteAddr + ", CallAMI: " + fullURL)
-			resultStr, session := callURL(fullURL, "")
-
-			if strings.Contains(resultStr, "Success") {
-				jsonRequest.Command = strings.Replace(jsonRequest.Command, ":", "=", -1)
-				jsonRequest.Command = strings.Replace(jsonRequest.Command, "\n", "&", -1)
-				jsonRequest.Command = strings.Replace(jsonRequest.Command, "\r", "", -1)
-				jsonRequest.Command = strings.Replace(jsonRequest.Command, "  ", " ", -1)
-				jsonRequest.Command = strings.Replace(jsonRequest.Command, " ", "%20", -1)
-				fullURL = amiurl + "?" + jsonRequest.Command
-				resultStr, session = callURL(fullURL, session)
-				result.Success = true
-				result.Errorcode = 5
-				result.Message = resultStr
-			} else {
-				result.Success = false
-				result.Message = resultStr
-				result.Errorcode = 1
-			}
+			result = ActualAMICall(jsonRequest.Username, jsonRequest.Secret, jsonRequest.Command)
 
 		}
 
 	}
-	writeLog("Error in callAMI: " + result.Message)
 	output, _ := json.Marshal(result)
 	w.Write(output)
 
 }
 
 func GetAMIStatus(w http.ResponseWriter, r *http.Request) {
-	type JSONResult struct {
-		Success   bool   `json:"success"`
-		Errorcode int    `json:"errorcode"`
-		Result    string `json:"result"`
-		Message   string `json:"message"`
-	}
+
 	w.Header().Add("Content-Type", "text/html")
-	result := JSONResult{true, 0, "", ""}
+	result := AMIJSONResult{true, 0, "", ""}
 	manres, err := ExecCLI("manager show settings", r.RemoteAddr)
 	if err != "" {
 		result.Success = false
@@ -152,6 +122,40 @@ func GetAMIStatus(w http.ResponseWriter, r *http.Request) {
 	w.Write(output)
 }
 
+func ActualAMICall(username string, secret string, acommand string) AMIJSONResult {
+
+	if username == "" {
+		username = GetConfigValue("/etc/simpletrunk/stagent.ini", "amiusername")
+		secret = GetConfigValue("/etc/simpletrunk/stagent.ini", "amisecret")
+	}
+	amiurl := GetConfigValue("/etc/simpletrunk/stagent.ini", "amiurl")
+	if amiurl[len(amiurl)-1] != '/' {
+		amiurl = amiurl + "/"
+	}
+
+	// execute command
+	fullURL := amiurl + "?action=login&username=" + username + "&secret=" + secret
+	resultStr, session := callURL(fullURL, "")
+	var result AMIJSONResult
+	if strings.Contains(resultStr, "Success") {
+		acommand = strings.Replace(acommand, ":", "=", -1)
+		acommand = strings.Replace(acommand, "\n", "&", -1)
+		acommand = strings.Replace(acommand, "\r", "", -1)
+		acommand = strings.Replace(acommand, "  ", " ", -1)
+		acommand = strings.Replace(acommand, " ", "%20", -1)
+		fullURL = amiurl + "?" + acommand
+		resultStr, session = callURL(fullURL, session)
+		result.Success = true
+		result.Errorcode = 5
+		result.Message = resultStr
+	} else {
+		result.Success = false
+		result.Message = resultStr
+		result.Errorcode = 1
+	}
+	return result
+}
+
 func GetAMIUsersinfo(w http.ResponseWriter, r *http.Request) {
 	type JSONResult struct {
 		Success   bool   `json:"success"`
@@ -185,6 +189,7 @@ func GetAMIUsersinfo(w http.ResponseWriter, r *http.Request) {
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
+
 func GetAMIUserInfo(w http.ResponseWriter, r *http.Request) {
 	type JSONRequest struct {
 		Username string
@@ -241,6 +246,7 @@ func GetAMIUserInfo(w http.ResponseWriter, r *http.Request) {
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
+
 func AddAMIUser(w http.ResponseWriter, r *http.Request) {
 	type JSONRequest struct {
 		Username string
@@ -302,6 +308,7 @@ func AddAMIUser(w http.ResponseWriter, r *http.Request) {
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
+
 func ModifyAMIUser(w http.ResponseWriter, r *http.Request) {
 	type JSONRequest struct {
 		Username  string
@@ -364,6 +371,7 @@ func ModifyAMIUser(w http.ResponseWriter, r *http.Request) {
 	output, _ := json.Marshal(result)
 	w.Write(output)
 }
+
 func getUsers() string {
 	var res string
 	f, err := os.Open("/etc/asterisk/manager.conf")
@@ -380,6 +388,7 @@ func getUsers() string {
 	}
 	return res
 }
+
 func getAMIAdd(user string) string {
 	var res string
 	f, err := os.Open("/etc/asterisk/manager.conf")
@@ -405,6 +414,7 @@ func getAMIAdd(user string) string {
 	}
 	return res
 }
+
 func isUserExist(user string) bool {
 	var res bool
 	f, err := os.Open("/etc/asterisk/manager.conf")

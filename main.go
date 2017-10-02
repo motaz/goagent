@@ -60,6 +60,9 @@ func main() {
 	//Schedule
 	http.HandleFunc("/IsWorkingTime", IsWorkingTime)
 
+	// Queue waiting count
+	http.HandleFunc("/WaitingCount", WaitingCount)
+
 	//Test
 	http.HandleFunc("/Test", test)
 
