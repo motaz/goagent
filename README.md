@@ -45,8 +45,29 @@ Input parameter:<br/>
    
 output result (JSON):
 
-		success   bool  <br/>
-		errorcode int    <br/>
-		result    string <br/>
-		message   string <br/>
-                <br/>
+		success   bool  
+		errorcode int   
+		result    string
+		message   string
+
+<h3>AddNode</h3>
+Add SIP node or Dialplan, e.g.:
+[103]
+type=peer
+username=test
+secret=0987
+host=dynamic
+
+Input parameters:
+		filename string
+		nodename string
+		content  string
+	
+output result (JSON):
+
+		success   bool  
+		errorcode int   
+		result    string
+		message   string
+		
+		
