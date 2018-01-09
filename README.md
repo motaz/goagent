@@ -10,17 +10,18 @@ GoAgent executes as background service and listens to port 9091 in super user mo
 <h3>Command</h3>
 Executes CLI command in Asterisk<br/>
 input parameters:<br/>
-Command</br><br/>
+  
+    Command
 
 Example:</br>
 {"command":"sip show peers"}<br/></br>
 
 Output (JSON): <br/>
-		success   bool  <br/>
-		errorcode int    <br/>
-		result    string <br/>
-		message   string <br/>
-                <br/>
+
+		success   bool  
+		errorcode int   
+		result    string
+		message   string
                 
 <h3>Shell</h3>
 Executes Linux shell command in Asterisk server<br/>
@@ -30,11 +31,11 @@ Example:<br/>
 {"command":"uptime"}<br/></br>
 
 Result (JSON):<br/>
-		success   bool  <br/>
-		errorcode int    <br/>
-		result    string <br/>
-		message   string <br/>
-                <br/>
+		
+    success   bool  
+		errorcode int   
+		result    string
+		message   string
                 
 <h3>CallAMI</h3>
 Executes AMI command in Asterisk server<br/>
@@ -51,15 +52,17 @@ output result (JSON):
 		message   string
 
 <h3>AddNode</h3>
-Add SIP node or Dialplan, e.g.:
-[103]
-type=peer
-username=test
-secret=0987
-host=dynamic
+Adds SIP node or Dialplan to specific configuratio file e.g.:<br/>
+
+    [103]
+    type=peer
+    username=test
+    secret=0987
+    host=dynamic
 
 Input parameters:
-		filename string
+    
+    filename string
 		nodename string
 		content  string
 	
