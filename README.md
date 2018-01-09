@@ -15,14 +15,14 @@ input parameters:<br/>
 
 Example:</br>
 
-	{"command":"sip show peers"}<br/></br>
+	{"command":"sip show peers"}
 
 Output (JSON): <br/>
 
-		success   bool  
-		errorcode int   
-		result    string
-		message   string
+	success   bool  
+	errorcode int   
+	result    string
+	message   string
                 
 <h3>Shell</h3>
 Executes Linux shell command in Asterisk server<br/>
@@ -30,28 +30,29 @@ input parameter:<br/>
 command<br/>
 Example:<br/>
 
-	{"command":"uptime"}<br/></br>
+	{"command":"uptime"}
 
 Result (JSON):<br/>
 		
     success   bool  
-		errorcode int   
-		result    string
-		message   string
+    errorcode int   
+    result    string
+    message   string
                 
 <h3>CallAMI</h3>
 Executes AMI command in Asterisk server<br/>
 Input parameter:<br/>
-		Username string<br/>
-		Secret   string<br/>
-		Command  string<br/><br/>
+
+	username string
+	secret   string
+	command  string
    
 output result (JSON):
 
-		success   bool  
-		errorcode int   
-		result    string
-		message   string
+	success   bool  
+	errorcode int   
+	result    string
+	message   string
 
 <h3>AddNode</h3>
 Adds SIP node or Dialplan to specific configuratio file e.g.:<br/>
@@ -64,16 +65,16 @@ Adds SIP node or Dialplan to specific configuratio file e.g.:<br/>
 
 Input parameters:
     
-    		filename string
-		nodename string
-		content  string
+    	filename string
+	nodename string
+	content  string
 	
 output result (JSON):
 
-		success   bool  
-		errorcode int   
-		result    string
-		message   string
+	success   bool  
+	errorcode int   
+	result    string
+	message   string
 		
 		
 <h3>ModifyNode</h3>
@@ -93,10 +94,10 @@ Input parameters:
 	
 output result (JSON):
 
-		success   bool  
-		errorcode int   
-		result    string
-		message   string
+	success   bool  
+	errorcode int   
+	result    string
+	message   string
 		
 		
 <h3>RemoveNode</h3>
@@ -116,9 +117,9 @@ Input parameters:
 	
 output result (JSON):
 
-		success   bool  
-		errorcode int   
-		result    string
-		message   string
+	success   bool  
+	errorcode int   
+	result    string
+	message   string
 		
 				
