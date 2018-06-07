@@ -21,6 +21,23 @@ func Shell(command string) (string, string) {
 	return out.String(), err.String()
 }
 
+func ExecCLIAsAMI(command string, remoteAddress string) (string, string) {
+
+	// Has been changed to AMI Call
+	command = "action:command\ncommand:" + command
+	result := ActualAMICall("", "", command)
+
+	//result.Message = strings.Replace(result.Message, "\n", "\n\r", -1)
+	if strings.Contains(result.Message, "Privilege:") {
+		result.Message = result.Message[strings.Index(result.Message, "Privilege:")+19:]
+	}
+	err := ""
+	if !result.Success {
+		err = result.Message
+	}
+	return result.Message, err
+}
+
 func ExecCLI(command string, remoteAddress string) (string, string) {
 	writeLog(remoteAddress + ", Executing CLI: " + command)
 	result, err := Shell("/usr/sbin/asterisk -rx '" + command + "'")

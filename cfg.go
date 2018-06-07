@@ -33,6 +33,7 @@ import (
 	"regexp"
 	"strings"
 
+	"CodeConfig"
 	"io/ioutil"
 )
 
@@ -43,63 +44,9 @@ func init() {
 	re, _ = regexp.Compile(pat)
 }
 
-// Load adds or updates entries in an existing map with string keys
-// and string values using a configuration file.
-//
-// The filename paramter indicates the configuration file to load ...
-// the dest parameter is the map that will be updated.
-//
-// The configuration file entries should be constructed in key=value
-// syntax.  A # symbol at the beginning of a line indicates a comment.
-// Blank lines are ignored.
-func Load(filename string, dest map[string]string) error {
-	fi, err := os.Stat(filename)
-	if err != nil {
-		return err
-	}
-	f, err := os.Open(filename)
-	if err != nil {
-		return err
-	}
-	buff := make([]byte, fi.Size())
-	f.Read(buff)
-
-	f.Close()
-	str := string(buff)
-	if !strings.HasSuffix(str, "\n") {
-		str = str + "\n"
-	}
-	//s2 := re.FindAllString(str, -1)
-	s2 := strings.Split(str, "\n")
-
-	for i := 0; i < len(s2); {
-
-		if strings.HasPrefix(s2[i], "#") {
-			i++
-		} else if strings.Contains(s2[i], "=") {
-			key := strings.Trim(s2[i][0:strings.Index(s2[i], "=")], " ")
-			val := strings.Trim(s2[i][strings.Index(s2[i], "=")+1:len(s2[i])], " ")
-
-			i++
-			dest[key] = val
-		} else {
-			i++
-		}
-	}
-	return nil
-}
-
 func GetConfigValue(configFile, name string) string {
 
-	mymap := make(map[string]string)
-
-	err := Load(configFile, mymap)
-	if err == nil {
-		return mymap[name]
-	} else {
-		writeLog("Error in GetConfigValue: " + err.Error())
-		return ""
-	}
+	return CodeConfig.GetConfigValue(configFile, name)
 
 }
 func setConfigParameter(configfile string, param string, value string) string {

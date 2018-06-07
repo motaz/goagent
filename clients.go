@@ -136,6 +136,7 @@ func ActualAMICall(username string, secret string, acommand string) AMIJSONResul
 	// execute command
 	fullURL := amiurl + "?action=login&username=" + username + "&secret=" + secret
 	resultStr, session := callURL(fullURL, "")
+
 	var result AMIJSONResult
 	if strings.Contains(resultStr, "Success") {
 		acommand = strings.Replace(acommand, ":", "=", -1)
@@ -148,6 +149,9 @@ func ActualAMICall(username string, secret string, acommand string) AMIJSONResul
 		result.Success = true
 		result.Errorcode = 5
 		result.Message = resultStr
+
+		// Logout
+		callURL(amiurl+"?action=logoff", session)
 	} else {
 		result.Success = false
 		result.Message = resultStr
