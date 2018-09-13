@@ -1,0 +1,7 @@
+2017-07-12 10:10:15.670194222 +0300 EAT: GoAgent has started..
+2017-07-12 10:10:27.023895993 +0300 EAT: GoAgent has started..
+2017-07-12 10:29:37.090140065 +0300 EAT: GoAgent has started..
+2017-10-12 16:01:01.134649158 +0300 EAT: GoAgent has started..
+2017-10-12 16:02:16.654466261 +0300 EAT: 127.0.0.1:57906, Executing CLI: sip show peers
+2017-10-12 16:02:20.151781732 +0300 EAT: 127.0.0.1:57906, Executing CLI: sip show users
+2017-10-12 16:02:51.457311452 +0300 EAT: 127.0.0.1:57912, Executing CLI: dialplan reload
