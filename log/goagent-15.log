@@ -1,0 +1,182 @@
+2017-03-15 10:39:56.930042458 +0300 EAT: GoAgent has started..
+2017-03-15 10:53:39.385390249 +0300 EAT: GoAgent has started..
+2017-03-15 11:01:29.751045697 +0300 EAT: Erorr in CallAMI: unexpected end of JSON input
+2017-03-15 11:01:29.751090752 +0300 EAT: Error in CallAMI: unexpected end of JSON input
+2017-03-15 11:01:29.751105369 +0300 EAT: Error in callAMI: unexpected end of JSON input
+2017-03-15 11:03:51.833721421 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:12:04.633042324 +0300 EAT: GoAgent has started..
+2017-03-15 12:12:26.740603107 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:13:03.509992921 +0300 EAT: GoAgent has started..
+2017-03-15 12:13:14.14461943 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:14:37.32266808 +0300 EAT: GoAgent has started..
+2017-03-15 12:14:42.197508452 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:15:01.453011641 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:19:34.73555967 +0300 EAT: GoAgent has started..
+2017-03-15 12:19:39.550983723 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:20:11.553573736 +0300 EAT: GoAgent has started..
+2017-03-15 12:20:13.552785423 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:20:20.371889342 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:22:16.737574043 +0300 EAT: GoAgent has started..
+2017-03-15 12:22:20.89050807 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:26:52.035557859 +0300 EAT: GoAgent has started..
+2017-03-15 12:27:08.910166992 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:27:19.501907793 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:27:51.965823477 +0300 EAT: GoAgent has started..
+2017-03-15 12:27:58.439459208 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 12:28:05.722810334 +0300 EAT: Error while copy: source error: open /etc/asterisk//etc/asterisk/agents.conf: no such file or directory
+2017-03-15 15:18:58.517386207 +0300 EAT: GoAgent has started..
+2017-03-15 15:40:22.234601148 +0300 EAT: GoAgent has started..
+2017-06-15 15:04:11.319485719 +0300 EAT: GoAgent has started..
+2017-06-15 15:05:21.52150165 +0300 EAT: GoAgent has started..
+2017-06-15 15:05:27.392001532 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:05:27.403995926 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:05:27.414661482 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:05:27.424026794 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:05:27.433835391 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:05:27.44503384 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:05:27.453477309 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:05:27.464301959 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:05:27.472809938 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:05:27.481920863 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:08:10.528223839 +0300 EAT: GoAgent has started..
+2017-06-15 15:08:33.446322688 +0300 EAT: GoAgent has started..
+2017-06-15 15:09:12.175289071 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:12.176646088 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:12.177558637 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:12.178529911 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:12.179373309 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:12.180289144 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:12.181449201 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:12.182634301 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:12.183849252 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:12.185992211 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:26.195155264 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:26.196049179 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:26.196980496 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:26.197968155 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:26.198645816 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:26.199493777 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:26.200457569 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:26.201357 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:26.202283486 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:26.203236307 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:42.722077963 +0300 EAT: GoAgent has started..
+2017-06-15 15:09:53.607409499 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:53.608526155 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:53.609493204 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:53.610390423 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:53.611432008 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:53.612429666 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:53.613505642 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:53.614407666 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:53.615376641 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:09:53.616309737 +0300 EAT: Error in GetConfigValue: Unable to process line in cfg file containing 1 = 7:01   to   23:59
+
+2017-06-15 15:11:38.948365808 +0300 EAT: GoAgent has started..
+2017-06-15 15:42:50.516066205 +0300 EAT: GoAgent has started..
+2017-06-15 15:42:53.537954045 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:53.542352476 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:53.546381761 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:53.550709031 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:53.555679867 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:53.559275419 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:53.56289645 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:53.566191436 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:53.570740908 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:53.574062475 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:54.671506186 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:54.678814097 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:54.682990373 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:54.686974487 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:54.690395506 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:54.693608992 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:54.697147518 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:54.701616088 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:54.705232781 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:54.708535371 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:55.267782184 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:55.271998621 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:55.275543154 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:55.279071317 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:55.283249256 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:55.286651752 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:55.289973714 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:55.293386842 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:55.297107895 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:42:55.30266659 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/.conf: no such file or directory
+2017-06-15 15:44:03.196068822 +0300 EAT: /etc/asterisk/testing.conf
+2017-06-15 15:45:13.600162098 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:45:13.610106217 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:45:13.614913791 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:45:13.624212977 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:45:13.632845681 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:45:13.63983203 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:45:13.648796656 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:45:13.655100246 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:45:13.662337724 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:45:13.669784481 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:32.782147789 +0300 EAT: GoAgent has started..
+2017-06-15 15:46:41.35886095 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:41.360762693 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:41.36140389 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:41.362247713 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:41.362952707 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:41.363352491 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:41.363728137 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:41.36414408 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:41.364504852 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:41.364929646 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:51.618434334 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:51.619706872 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:51.620542172 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:51.621052849 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:51.621476621 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:51.621893967 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:51.622327779 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:51.622761153 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:51.623235142 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:46:51.623717766 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2017-06-15 15:47:38.168379453 +0300 EAT: GoAgent has started..
+2017-06-15 15:48:03.909519671 +0300 EAT: /etc/asterisk/testing.conf
+2017-06-15 15:48:13.241619569 +0300 EAT: GoAgent has started..
+2017-06-15 15:48:53.314814086 +0300 EAT: Error in GetConfigValue: stat /etc/asterisk/testing2.conf: no such file or directory
+2018-06-15 06:33:22.527338935 +0200 EET m=+0.028924753: GoAgent has started..

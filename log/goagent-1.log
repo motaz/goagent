@@ -1,0 +1,505 @@
+2017-07-01 12:00:45.966592345 +0300 EAT: GoAgent has started..
+2017-08-01 15:08:12.788688196 +0300 EAT: GoAgent has started..
+2017-08-01 15:08:19.019448088 +0300 EAT: asterisk:cdr@tcp(127.0.0.1:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:08:19.019859908 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 15:08:20.830069885 +0300 EAT: asterisk:cdr@tcp(127.0.0.1:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:08:20.830221693 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 15:09:55.486147715 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:09:55.486469757 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:09:56.852386837 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:09:56.852513854 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:10:14.693412135 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:10:14.693546222 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:11:04.77616693 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:11:04.776292914 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:11:54.982337302 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:11:54.98247786 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:12:45.440227915 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:12:45.440349423 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:13:35.641742601 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:13:35.641960683 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:14:25.875400021 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:14:25.875536323 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:15:16.102244895 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:15:16.102411924 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:16:06.31290462 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:16:06.313036458 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:16:56.519771723 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:16:56.52008084 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:17:46.73917935 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:17:46.739341503 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:18:36.904552983 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:18:36.904842831 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:19:27.114184756 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:19:27.114442696 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:20:17.343383225 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:20:17.343541482 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:21:07.57029186 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:21:07.57041934 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:21:57.787587223 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:21:57.78772983 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:22:48.070833522 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:22:48.070983863 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:23:38.307651679 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:23:38.307797489 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:24:28.50961351 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:24:28.509715038 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:25:18.71893211 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:25:18.71904519 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:26:09.014677048 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:26:09.014788498 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:26:59.222075018 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:26:59.22223624 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:27:49.480839887 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:27:49.480972937 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:28:39.697472545 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:28:39.697599613 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:29:30.022066704 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:29:30.022185084 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:30:20.268149586 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:30:20.268292602 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:31:10.674089504 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:31:10.67420877 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:32:00.88047432 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:32:00.880637946 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:32:51.156694393 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:32:51.15683292 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:33:41.367950883 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:33:41.368086038 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:34:31.678342272 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:34:31.678769338 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:35:21.890063363 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:35:21.890217305 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:36:12.209198244 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:36:12.209292497 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:37:02.502911765 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:37:02.503080647 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:37:52.786984382 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:37:52.787101491 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:38:43.070194332 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:38:43.070411446 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:39:33.384792493 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:39:33.3852057 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:40:23.760530572 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:40:23.760648168 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:41:13.979817774 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:41:13.979986548 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:42:04.197804738 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:42:04.198059991 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:42:54.438139415 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:42:54.43827276 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:43:44.698911637 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:43:44.69903133 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:44:34.918475574 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:44:34.918596278 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:45:25.305718867 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:45:25.305868343 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:46:15.526029818 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:46:15.526183093 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:47:05.74495568 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:47:05.745095606 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:47:55.956343881 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:47:55.956482478 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:48:46.167689959 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:48:46.167884595 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:49:36.397817514 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:49:36.397956537 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:50:26.617958714 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:50:26.61821072 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:51:16.830172698 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:51:16.830296285 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:52:07.041372663 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:52:07.041489197 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:52:57.244323659 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:52:57.244417792 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:53:47.445622043 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:53:47.445792506 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:54:37.659811485 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:54:37.660011892 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:55:27.875862575 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:55:27.876154909 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:18.036646463 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:18.036782833 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:21.429605412 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:21.429717755 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:22.424961919 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:22.425077774 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:30.06079706 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:30.060918961 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:31.732514617 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:31.732622472 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:40.738182357 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:40.738331965 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:42.792917133 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:42.793001976 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:44.852179728 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:44.852302903 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:48.532451522 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:48.532550676 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:53.27213789 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:53.272278412 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:54.587600585 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:56:54.587694405 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:56:55.275927278 +0300 EAT: Error in callAMI: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL was not found on this server.</p>
+<hr />
+<address>Asterisk Server</address>
+</body></html>
+
+2017-08-01 15:56:55.277410064 +0300 EAT: Error in callAMI: <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL was not found on this server.</p>
+<hr />
+<address>Asterisk Server</address>
+</body></html>
+
+2017-08-01 15:57:00.094900079 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:57:00.095018608 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:57:06.005714655 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:57:06.00589241 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:57:11.085431591 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:57:11.085561402 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:57:49.607695091 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:57:49.607923011 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:57:50.574337178 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:57:50.574453678 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:57:51.35582415 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:57:51.355964902 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:57:51.9902662 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:57:51.990405296 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:57:52.530967471 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:57:52.531068788 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:57:53.378978659 +0300 EAT: asterisk:cdr@tcp(localhost:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:57:53.379228559 +0300 EAT: Error in query: dial tcp: lookup localhost: no such host
+2017-08-01 15:58:27.170448725 +0300 EAT: asterisk:cdr@tcp(127.0.0.1:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:58:27.170571562 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 15:58:34.538385101 +0300 EAT: asterisk:cdr@tcp(127.0.0.1:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:58:34.538567702 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 15:58:40.651104441 +0300 EAT: asterisk:cdr@tcp(127.0.0.1:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:58:40.651319266 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 15:58:41.283598471 +0300 EAT: asterisk:cdr@tcp(127.0.0.1:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:58:41.283709936 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 15:58:42.170581055 +0300 EAT: asterisk:cdr@tcp(127.0.0.1:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:58:42.170724566 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 15:59:32.240838412 +0300 EAT: asterisk:cdr@tcp(127.0.0.1:3306)/asterisk_cdr?charset=utf8
+2017-08-01 15:59:32.240980984 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:00:51.348482076 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:00:52.314379998 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:00:53.163579267 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:00:54.092502299 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:00:55.233431844 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:01:03.86213123 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:01:53.942594573 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:02:44.039476608 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:03:03.224675444 +0300 EAT: GoAgent has started..
+2017-08-01 16:03:06.39212559 +0300 EAT: GoAgent has started..
+2017-08-01 16:03:09.899480115 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:03:20.883847391 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:03:53.754507306 +0300 EAT: GoAgent has started..
+2017-08-01 16:03:56.008731533 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:04:15.312020807 +0300 EAT: GoAgent has started..
+2017-08-01 16:04:16.962450079 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:05:07.054805551 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:05:19.645214439 +0300 EAT: GoAgent has started..
+2017-08-01 16:05:21.282875097 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:06:11.357644715 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:07:01.449652404 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:07:51.548417226 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:08:41.725126971 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:09:31.908433061 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:09:36.152543773 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:10:26.220300744 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:10:47.376166853 +0300 EAT: GoAgent has started..
+2017-08-01 16:10:49.260589498 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:11:39.344200546 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:12:29.44386344 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:13:19.655288658 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:13:28.490807024 +0300 EAT: GoAgent has started..
+2017-08-01 16:13:35.337915438 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:13:43.811506238 +0300 EAT: GoAgent has started..
+2017-08-01 16:13:45.49571517 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:13:59.06778965 +0300 EAT: GoAgent has started..
+2017-08-01 16:14:00.871277118 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:14:50.957619116 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:14:56.901254397 +0300 EAT: GoAgent has started..
+2017-08-01 16:15:05.447441373 +0300 EAT: Error in query: invalid DSN: missing the slash separating the database name
+2017-08-01 16:15:19.31922405 +0300 EAT: GoAgent has started..
+2017-08-01 16:15:20.926574831 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:15:30.244205426 +0300 EAT: GoAgent has started..
+2017-08-01 16:17:49.249498849 +0300 EAT: GoAgent has started..
+2017-08-01 16:20:44.011699264 +0300 EAT: GoAgent has started..
+2017-08-01 16:20:46.453922886 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:21:36.514988645 +0300 EAT: Error in query: dial tcp: lookup 127.0.0.1: no such host
+2017-08-01 16:21:58.212182815 +0300 EAT: GoAgent has started..
+2018-06-01 13:26:30.764423559 +0200 EET: GoAgent has started..
+2018-06-01 13:27:23.472913391 +0200 EET: 127.0.0.1:33750, Executing CLI: core show channels
+2018-06-01 13:27:30.619831794 +0200 EET: 127.0.0.1:33752, Executing CLI: sip show peers
+2018-06-01 13:27:31.88632041 +0200 EET: 127.0.0.1:33752, Executing CLI: sip show users
+2018-06-01 13:27:47.228350129 +0200 EET m=+0.001601655: GoAgent has started..
+2018-06-01 13:27:47.86322337 +0200 EET m=+0.636474886: 127.0.0.1:33760, Executing CLI: sip show peers
+2018-06-01 13:27:50.732461173 +0200 EET m=+3.505712672: 127.0.0.1:33760, Executing CLI: core show version
+2018-06-01 13:29:45.69169616 +0200 EET m=+0.001441063: GoAgent has started..
+2018-06-01 13:29:53.821049973 +0200 EET m=+8.130794842: 127.0.0.1:33804, Executing CLI: core show channels
+2018-06-01 13:29:55.080270023 +0200 EET m=+9.390014848: 127.0.0.1:33804, Executing CLI: sip show peers
+2018-06-01 13:29:56.264379027 +0200 EET m=+10.574123828: 127.0.0.1:33804, Executing CLI: sip show users
+2018-06-01 13:41:15.098660808 +0200 EET m=+0.002206006: GoAgent has started..
+2018-06-01 13:41:41.224652317 +0200 EET m=+0.002036836: GoAgent has started..
+2018-06-01 13:43:44.997381466 +0200 EET m=+0.001605343: GoAgent has started..
+2018-06-01 13:44:34.123289214 +0200 EET m=+49.127513026: 127.0.0.1:34896, Executing CLI: core show channels
+2018-06-01 13:44:35.683395271 +0200 EET m=+50.687619117: 127.0.0.1:34896, Executing CLI: sip show peers
+2018-06-01 13:44:36.648517003 +0200 EET m=+51.652740819: 127.0.0.1:34896, Executing CLI: sip show users
+2018-06-01 13:44:37.294917907 +0200 EET m=+52.299141724: 127.0.0.1:34896, Executing CLI: sip show channelstats
+2018-06-01 13:44:37.972221043 +0200 EET m=+52.976444899: 127.0.0.1:34896, Executing CLI: queue show
+2018-06-01 13:44:38.662413952 +0200 EET m=+53.666637784: 127.0.0.1:34896, Executing CLI: core show channels
+2018-06-01 13:45:08.421597019 +0200 EET m=+0.001952911: GoAgent has started..
+2018-06-01 13:46:04.121322534 +0200 EET m=+0.001928545: GoAgent has started..
+2018-06-01 13:46:06.269128792 +0200 EET m=+2.149734805: 127.0.0.1:35060, Executing CLI: sip show users
+2018-06-01 13:46:07.76281155 +0200 EET m=+3.643417489: 127.0.0.1:35060, Executing CLI: sip show peers
+2018-06-01 13:46:08.980722217 +0200 EET m=+4.861328166: 127.0.0.1:35060, Executing CLI: sip show channelstats
+2018-06-01 13:46:09.880718928 +0200 EET m=+5.761324873: 127.0.0.1:35060, Executing CLI: queue show
+2018-06-01 13:46:10.680631916 +0200 EET m=+6.561237841: 127.0.0.1:35060, Executing CLI: agent show
+2018-06-01 13:46:11.297310021 +0200 EET m=+7.177915954: 127.0.0.1:35060, Executing CLI: core show codecs
+2018-06-01 13:46:12.146759189 +0200 EET m=+8.027365134: 127.0.0.1:35060, Executing CLI: core show channels
+2018-06-01 13:46:13.073173583 +0200 EET m=+8.953779512: 127.0.0.1:35060, Executing CLI: sip show peers
+2018-06-01 13:48:27.661154769 +0200 EET m=+143.541760700: 127.0.0.1:35124, Executing CLI: sip show peers
+2018-06-01 13:53:45.051380557 +0200 EET m=+0.001767034: GoAgent has started..
+2018-06-01 13:54:05.080289491 +0200 EET m=+20.030675920: 127.0.0.1:35174, Executing CLI: core show channels
+2018-06-01 13:54:42.186379786 +0200 EET m=+0.001618766: GoAgent has started..
+2018-06-01 14:00:52.814957647 +0200 EET m=+0.001744728: GoAgent has started..
+2018-06-01 14:04:14.497671347 +0200 EET m=+0.001491971: GoAgent has started..
+2018-06-01 14:04:29.27243827 +0200 EET m=+0.001608673: GoAgent has started..
+2018-06-01 14:04:53.255478173 +0200 EET m=+0.002062006: GoAgent has started..
+2018-06-01 14:05:20.52130967 +0200 EET m=+0.001531058: GoAgent has started..
+2018-06-01 14:05:33.248849428 +0200 EET m=+0.002294065: GoAgent has started..
+2018-06-01 14:06:02.090134279 +0200 EET m=+0.001879967: GoAgent has started..
+2018-06-01 14:06:11.011877188 +0200 EET m=+0.001631350: GoAgent has started..
+2018-06-01 14:06:21.082234032 +0200 EET m=+0.001467558: GoAgent has started..
+2018-06-01 14:06:22.394822939 +0200 EET m=+0.001733170: GoAgent has started..
+2018-06-01 14:06:36.422217228 +0200 EET m=+0.001894069: GoAgent has started..
+2018-06-01 14:06:43.979328715 +0200 EET m=+0.001500668: GoAgent has started..
+2018-06-01 14:06:59.615448317 +0200 EET m=+0.001482373: GoAgent has started..
+2018-06-01 14:07:00.594015544 +0200 EET m=+0.001567702: GoAgent has started..
+2018-06-01 14:07:28.471006684 +0200 EET m=+0.001497335: GoAgent has started..
+2018-06-01 14:07:29.429578522 +0200 EET m=+0.001739003: GoAgent has started..
+2018-06-01 14:07:42.965463933 +0200 EET m=+0.001501631: GoAgent has started..
+2018-06-01 14:07:44.565452194 +0200 EET m=+0.001704789: GoAgent has started..
+2018-06-01 14:08:00.827288599 +0200 EET m=+0.002182211: GoAgent has started..
+2018-06-01 14:08:21.164921068 +0200 EET m=+0.002120661: GoAgent has started..
+2018-06-01 14:08:22.141803349 +0200 EET m=+0.001521302: GoAgent has started..
+2018-06-01 14:08:46.2893508 +0200 EET m=+0.001616405: GoAgent has started..
+2018-06-01 14:08:47.257115307 +0200 EET m=+0.001534262: GoAgent has started..
+2018-06-01 14:09:07.618197424 +0200 EET m=+0.001557373: GoAgent has started..
+2018-06-01 14:09:20.885335525 +0200 EET m=+0.001411332: GoAgent has started..
+2018-06-01 14:09:21.631543318 +0200 EET m=+0.001497239: GoAgent has started..
+2018-06-01 14:11:11.361837499 +0200 EET m=+0.001886122: GoAgent has started..
+2018-06-01 14:11:12.426319573 +0200 EET m=+0.001774919: GoAgent has started..
+2018-06-01 14:11:24.589495916 +0200 EET m=+0.001654721: GoAgent has started..
+2018-06-01 14:11:25.588944776 +0200 EET m=+0.001737629: GoAgent has started..
+2018-06-01 14:11:47.025545283 +0200 EET m=+0.001656547: GoAgent has started..
+2018-06-01 14:11:48.883623644 +0200 EET m=+0.001527245: GoAgent has started..
+2018-06-01 14:11:55.467165664 +0200 EET m=+0.002099107: GoAgent has started..
+2018-06-01 14:11:56.426401976 +0200 EET m=+0.001464484: GoAgent has started..
+2018-06-01 14:12:05.525637513 +0200 EET m=+0.002023912: GoAgent has started..
+2018-06-01 14:12:07.333667152 +0200 EET m=+0.001537700: GoAgent has started..
+2018-06-01 14:14:23.355001433 +0200 EET m=+0.001668713: GoAgent has started..
+2018-06-01 14:16:25.876984605 +0200 EET m=+0.001547754: GoAgent has started..
+2018-06-01 14:16:26.767939334 +0200 EET m=+0.001868155: GoAgent has started..
+2018-06-01 17:14:47.535595175 +0200 EET m=+0.001482255: GoAgent has started..
+2018-07-01 18:57:23.512294433 +0200 EET m=+0.029632377: GoAgent has started..
+2018-07-01 18:58:18.956595512 +0200 EET m=+55.473933435: 127.0.0.1:56986, Executing CLI: queue show
+2018-07-01 18:58:19.515626505 +0200 EET m=+56.032964373: 127.0.0.1:56986, Executing CLI: queue show
+2018-07-01 18:59:10.157819332 +0200 EET m=+106.675157258: 127.0.0.1:57000, Executing CLI: queue show
+2018-07-01 18:59:10.688980656 +0200 EET m=+107.206318522: 127.0.0.1:57000, Executing CLI: queue show
+2018-07-01 19:00:01.360972698 +0200 EET m=+157.878310570: 127.0.0.1:57014, Executing CLI: queue show
+2018-07-01 19:00:02.003202278 +0200 EET m=+158.520540185: 127.0.0.1:57014, Executing CLI: queue show
+2018-07-01 19:00:52.713737461 +0200 EET m=+209.231075315: 127.0.0.1:57026, Executing CLI: queue show
+2018-07-01 19:00:53.224528539 +0200 EET m=+209.741866393: 127.0.0.1:57026, Executing CLI: queue show
+2018-07-01 19:01:43.813670494 +0200 EET m=+260.331008348: 127.0.0.1:57036, Executing CLI: queue show
+2018-07-01 19:01:44.321457324 +0200 EET m=+260.838795198: 127.0.0.1:57036, Executing CLI: queue show
+2018-07-01 19:02:34.91224596 +0200 EET m=+311.429583858: 127.0.0.1:57048, Executing CLI: queue show
+2018-07-01 19:02:35.437592453 +0200 EET m=+311.954930313: 127.0.0.1:57048, Executing CLI: queue show
+2018-07-01 19:03:26.047041514 +0200 EET m=+362.564379366: 127.0.0.1:57064, Executing CLI: queue show
+2018-07-01 19:03:26.557342008 +0200 EET m=+363.074679886: 127.0.0.1:57064, Executing CLI: queue show
+2018-07-01 19:04:17.23831728 +0200 EET m=+413.755655158: 127.0.0.1:57082, Executing CLI: queue show
+2018-07-01 19:04:17.746540468 +0200 EET m=+414.263878346: 127.0.0.1:57082, Executing CLI: queue show
+2018-07-01 19:05:08.43076721 +0200 EET m=+464.948105112: 127.0.0.1:57092, Executing CLI: queue show
+2018-07-01 19:05:09.099768818 +0200 EET m=+465.617106718: 127.0.0.1:57092, Executing CLI: queue show
+2018-07-01 19:05:59.717699088 +0200 EET m=+516.235036946: 127.0.0.1:57112, Executing CLI: queue show
+2018-07-01 19:06:00.226667607 +0200 EET m=+516.744005525: 127.0.0.1:57112, Executing CLI: queue show
+2018-07-01 19:06:50.843343141 +0200 EET m=+567.360680993: 127.0.0.1:57124, Executing CLI: queue show
+2018-07-01 19:06:51.351456305 +0200 EET m=+567.868794193: 127.0.0.1:57124, Executing CLI: queue show
+2018-07-01 19:07:41.970159006 +0200 EET m=+618.487496864: 127.0.0.1:57134, Executing CLI: queue show
+2018-07-01 19:07:42.527792523 +0200 EET m=+619.045130395: 127.0.0.1:57134, Executing CLI: queue show
+2018-07-01 19:08:33.192834185 +0200 EET m=+669.710172071: 127.0.0.1:57148, Executing CLI: queue show
+2018-07-01 19:08:33.746211285 +0200 EET m=+670.263549165: 127.0.0.1:57148, Executing CLI: queue show
+2018-07-01 19:09:24.376739928 +0200 EET m=+720.894077802: 127.0.0.1:57162, Executing CLI: queue show
+2018-07-01 19:09:24.947590705 +0200 EET m=+721.464928589: 127.0.0.1:57162, Executing CLI: queue show
+2018-07-01 19:10:15.566667362 +0200 EET m=+772.084005230: 127.0.0.1:57176, Executing CLI: queue show
+2018-07-01 19:10:16.083829553 +0200 EET m=+772.601167409: 127.0.0.1:57176, Executing CLI: queue show
+2018-07-01 19:11:06.758944951 +0200 EET m=+823.276282805: 127.0.0.1:57194, Executing CLI: queue show
+2018-07-01 19:11:07.27989754 +0200 EET m=+823.797235480: 127.0.0.1:57194, Executing CLI: queue show
+2018-07-01 19:11:57.931504223 +0200 EET m=+874.448842101: 127.0.0.1:57210, Executing CLI: queue show
+2018-07-01 19:11:58.505300124 +0200 EET m=+875.022637994: 127.0.0.1:57210, Executing CLI: queue show
+2018-07-01 19:12:49.07621228 +0200 EET m=+925.593550158: 127.0.0.1:57218, Executing CLI: queue show
+2018-07-01 19:12:49.584140076 +0200 EET m=+926.101477928: 127.0.0.1:57218, Executing CLI: queue show
+2018-07-01 19:13:40.171745701 +0200 EET m=+976.689083578: 127.0.0.1:57230, Executing CLI: queue show
+2018-07-01 19:13:40.678178183 +0200 EET m=+977.195516063: 127.0.0.1:57230, Executing CLI: queue show
+2018-07-01 19:14:31.242311128 +0200 EET m=+1027.759649040: 127.0.0.1:57244, Executing CLI: queue show
+2018-07-01 19:14:31.748824631 +0200 EET m=+1028.266162501: 127.0.0.1:57244, Executing CLI: queue show
+2018-07-01 19:15:22.427473109 +0200 EET m=+1078.944811005: 127.0.0.1:57258, Executing CLI: queue show
+2018-07-01 19:15:23.030446965 +0200 EET m=+1079.547784849: 127.0.0.1:57258, Executing CLI: queue show
+2018-07-01 19:16:13.627737743 +0200 EET m=+1130.145075627: 127.0.0.1:57276, Executing CLI: queue show
+2018-07-01 19:16:14.159372934 +0200 EET m=+1130.676710792: 127.0.0.1:57276, Executing CLI: queue show
+2018-07-01 19:17:04.795240675 +0200 EET m=+1181.312578579: 127.0.0.1:57290, Executing CLI: queue show
+2018-07-01 19:17:05.32133769 +0200 EET m=+1181.838675590: 127.0.0.1:57290, Executing CLI: queue show
+2018-07-01 19:17:55.928740388 +0200 EET m=+1232.446078242: 127.0.0.1:57306, Executing CLI: queue show
+2018-07-01 19:17:56.448653856 +0200 EET m=+1232.965991708: 127.0.0.1:57306, Executing CLI: queue show
+2018-07-01 19:18:47.144602927 +0200 EET m=+1283.661940789: 127.0.0.1:57320, Executing CLI: queue show
+2018-07-01 19:18:47.776994051 +0200 EET m=+1284.294331929: 127.0.0.1:57320, Executing CLI: queue show
+2018-07-01 19:19:38.395856447 +0200 EET m=+1334.913194441: 127.0.0.1:57336, Executing CLI: queue show
+2018-07-01 19:19:38.940431769 +0200 EET m=+1335.457769623: 127.0.0.1:57336, Executing CLI: queue show
+2018-07-01 19:20:29.538960288 +0200 EET m=+1386.056298176: 127.0.0.1:57352, Executing CLI: queue show
+2018-07-01 19:20:30.062921813 +0200 EET m=+1386.580259693: 127.0.0.1:57352, Executing CLI: queue show
+2018-07-01 19:21:20.654342395 +0200 EET m=+1437.171680291: 127.0.0.1:57366, Executing CLI: queue show
+2018-07-01 19:21:21.174756231 +0200 EET m=+1437.692094085: 127.0.0.1:57366, Executing CLI: queue show
+2018-07-01 19:22:11.785983859 +0200 EET m=+1488.303321755: 127.0.0.1:57386, Executing CLI: queue show
+2018-07-01 19:22:12.31763288 +0200 EET m=+1488.834970748: 127.0.0.1:57386, Executing CLI: queue show
+2018-07-01 19:23:02.995516631 +0200 EET m=+1539.512854501: 127.0.0.1:57398, Executing CLI: queue show
+2018-07-01 19:23:03.616660189 +0200 EET m=+1540.133998051: 127.0.0.1:57398, Executing CLI: queue show
+2018-07-01 19:23:54.212928609 +0200 EET m=+1590.730266487: 127.0.0.1:57412, Executing CLI: queue show
+2018-07-01 19:23:54.744468897 +0200 EET m=+1591.261806791: 127.0.0.1:57412, Executing CLI: queue show
+2018-07-01 19:24:45.34526266 +0200 EET m=+1641.862600539: 127.0.0.1:57426, Executing CLI: queue show
+2018-07-01 19:24:45.87954715 +0200 EET m=+1642.396885016: 127.0.0.1:57426, Executing CLI: queue show
+2018-07-01 19:25:36.493594728 +0200 EET m=+1693.010932768: 127.0.0.1:57442, Executing CLI: queue show
+2018-07-01 19:25:37.016498677 +0200 EET m=+1693.533836569: 127.0.0.1:57442, Executing CLI: queue show
+2018-07-01 19:26:27.609060236 +0200 EET m=+1744.126398240: 127.0.0.1:57458, Executing CLI: queue show
+2018-07-01 19:26:28.106299417 +0200 EET m=+1744.623637309: 127.0.0.1:57458, Executing CLI: queue show
+2018-07-01 19:27:18.718741837 +0200 EET m=+1795.236079730: 127.0.0.1:57470, Executing CLI: queue show
+2018-07-01 19:27:19.245426547 +0200 EET m=+1795.762764401: 127.0.0.1:57470, Executing CLI: queue show
+2018-07-01 19:28:09.792554034 +0200 EET m=+1846.309891887: 127.0.0.1:57486, Executing CLI: queue show
+2018-07-01 19:28:10.283644975 +0200 EET m=+1846.800982843: 127.0.0.1:57486, Executing CLI: queue show
+2018-07-01 19:29:00.8310829 +0200 EET m=+1897.348420756: 127.0.0.1:57500, Executing CLI: queue show
+2018-07-01 19:29:01.315024217 +0200 EET m=+1897.832362091: 127.0.0.1:57500, Executing CLI: queue show
+2018-07-01 19:29:51.932280954 +0200 EET m=+1948.449618818: 127.0.0.1:57514, Executing CLI: queue show
+2018-07-01 19:29:52.502005079 +0200 EET m=+1949.019342969: 127.0.0.1:57514, Executing CLI: queue show
+2018-07-01 19:30:43.045904748 +0200 EET m=+1999.563242651: 127.0.0.1:57528, Executing CLI: queue show
+2018-07-01 19:30:43.532582216 +0200 EET m=+2000.049920074: 127.0.0.1:57528, Executing CLI: queue show
+2018-07-01 19:31:34.074843437 +0200 EET m=+2050.592181363: 127.0.0.1:57540, Executing CLI: queue show
+2018-07-01 19:31:34.565379898 +0200 EET m=+2051.082717759: 127.0.0.1:57540, Executing CLI: queue show
+2018-07-01 19:32:25.112329021 +0200 EET m=+2101.629666952: 127.0.0.1:57554, Executing CLI: queue show
+2018-07-01 19:32:25.604808572 +0200 EET m=+2102.122146452: 127.0.0.1:57554, Executing CLI: queue show
+2018-07-01 19:33:16.241175046 +0200 EET m=+2152.758513007: 127.0.0.1:57566, Executing CLI: queue show
+2018-07-01 19:33:16.810718799 +0200 EET m=+2153.328056679: 127.0.0.1:57566, Executing CLI: queue show
+2018-07-01 19:34:07.357438813 +0200 EET m=+2203.874776703: 127.0.0.1:57580, Executing CLI: queue show
+2018-07-01 19:34:07.844271161 +0200 EET m=+2204.361609039: 127.0.0.1:57580, Executing CLI: queue show
+2018-07-01 19:34:58.385186467 +0200 EET m=+2254.902524357: 127.0.0.1:57592, Executing CLI: queue show
+2018-07-01 19:34:58.864171211 +0200 EET m=+2255.381509063: 127.0.0.1:57592, Executing CLI: queue show
+2018-07-01 19:35:49.419099281 +0200 EET m=+2305.936437179: 127.0.0.1:57608, Executing CLI: queue show
+2018-07-01 19:35:49.901308154 +0200 EET m=+2306.418646014: 127.0.0.1:57608, Executing CLI: queue show
+2018-07-01 19:36:40.510162004 +0200 EET m=+2357.027499892: 127.0.0.1:57616, Executing CLI: queue show
+2018-07-01 19:36:41.025875294 +0200 EET m=+2357.543213180: 127.0.0.1:57616, Executing CLI: queue show
+2018-07-01 19:37:31.620843919 +0200 EET m=+2408.138181824: 127.0.0.1:57628, Executing CLI: queue show
+2018-07-01 19:37:32.186743845 +0200 EET m=+2408.704081719: 127.0.0.1:57628, Executing CLI: queue show
+2018-07-01 19:38:22.730792835 +0200 EET m=+2459.248130746: 127.0.0.1:57644, Executing CLI: queue show
+2018-07-01 19:38:23.225153318 +0200 EET m=+2459.742491212: 127.0.0.1:57644, Executing CLI: queue show
+2018-07-01 19:39:13.764885993 +0200 EET m=+2510.282223871: 127.0.0.1:57656, Executing CLI: queue show
+2018-07-01 19:39:14.252463637 +0200 EET m=+2510.769801519: 127.0.0.1:57656, Executing CLI: queue show
+2018-07-01 19:40:04.783697312 +0200 EET m=+2561.301035170: 127.0.0.1:57670, Executing CLI: queue show
+2018-07-01 19:40:05.271169424 +0200 EET m=+2561.788507306: 127.0.0.1:57670, Executing CLI: queue show
+2018-07-01 19:40:55.858899149 +0200 EET m=+2612.376237115: 127.0.0.1:57682, Executing CLI: queue show
+2018-07-01 19:40:56.350794227 +0200 EET m=+2612.868132105: 127.0.0.1:57682, Executing CLI: queue show
+2018-07-01 19:41:46.976249419 +0200 EET m=+2663.493587331: 127.0.0.1:57696, Executing CLI: queue show
+2018-07-01 19:41:47.562604806 +0200 EET m=+2664.079942668: 127.0.0.1:57696, Executing CLI: queue show
+2018-07-01 19:42:38.109346374 +0200 EET m=+2714.626684266: 127.0.0.1:57714, Executing CLI: queue show
+2018-07-01 19:42:38.592247982 +0200 EET m=+2715.109585842: 127.0.0.1:57714, Executing CLI: queue show
+2018-07-01 19:43:29.134871348 +0200 EET m=+2765.652209251: 127.0.0.1:57724, Executing CLI: queue show
+2018-07-01 19:43:29.622759164 +0200 EET m=+2766.140097026: 127.0.0.1:57724, Executing CLI: queue show
+2018-07-01 19:44:20.170009156 +0200 EET m=+2816.687347068: 127.0.0.1:57738, Executing CLI: queue show
+2018-07-01 19:44:20.655907125 +0200 EET m=+2817.173245040: 127.0.0.1:57738, Executing CLI: queue show
+2018-07-01 19:45:11.200976394 +0200 EET m=+2867.718314256: 127.0.0.1:57750, Executing CLI: queue show
+2018-07-01 19:45:11.687883289 +0200 EET m=+2868.205221151: 127.0.0.1:57750, Executing CLI: queue show
+2018-07-01 19:46:02.333144733 +0200 EET m=+2918.850482601: 127.0.0.1:57764, Executing CLI: queue show
+2018-07-01 19:46:02.843357591 +0200 EET m=+2919.360695469: 127.0.0.1:57764, Executing CLI: queue show
+2018-07-01 19:46:53.470803383 +0200 EET m=+2969.988141235: 127.0.0.1:57778, Executing CLI: queue show
+2018-07-01 19:46:54.053811751 +0200 EET m=+2970.571149627: 127.0.0.1:57778, Executing CLI: queue show
+2018-07-01 19:47:44.615620677 +0200 EET m=+3021.132958571: 127.0.0.1:57790, Executing CLI: queue show
+2018-07-01 19:47:45.116865126 +0200 EET m=+3021.634203014: 127.0.0.1:57790, Executing CLI: queue show
+2018-07-01 19:48:35.663556323 +0200 EET m=+3072.180894199: 127.0.0.1:57802, Executing CLI: queue show
+2018-07-01 19:48:36.147614245 +0200 EET m=+3072.664952135: 127.0.0.1:57802, Executing CLI: queue show
+2018-07-01 19:49:27.009467977 +0200 EET m=+3123.526805951: 127.0.0.1:57814, Executing CLI: queue show
+2018-07-01 19:49:27.631269962 +0200 EET m=+3124.148607822: 127.0.0.1:57814, Executing CLI: queue show
+2018-07-01 19:50:18.182655169 +0200 EET m=+3174.699993025: 127.0.0.1:57830, Executing CLI: queue show
+2018-07-01 19:50:18.667537721 +0200 EET m=+3175.184875611: 127.0.0.1:57830, Executing CLI: queue show
+2018-07-01 19:51:09.23344111 +0200 EET m=+3225.750778974: 127.0.0.1:57844, Executing CLI: queue show
+2018-07-01 19:51:09.720610294 +0200 EET m=+3226.237948148: 127.0.0.1:57844, Executing CLI: queue show
+2018-07-01 19:52:00.265177633 +0200 EET m=+3276.782515646: 127.0.0.1:57856, Executing CLI: queue show
+2018-07-01 19:52:00.753354781 +0200 EET m=+3277.270692633: 127.0.0.1:57856, Executing CLI: queue show
+2018-07-01 19:52:51.386376029 +0200 EET m=+3327.903713914: 127.0.0.1:57874, Executing CLI: queue show
+2018-07-01 19:52:51.936584939 +0200 EET m=+3328.453922800: 127.0.0.1:57874, Executing CLI: queue show
+2018-07-01 19:53:42.473942138 +0200 EET m=+3378.991279996: 127.0.0.1:57886, Executing CLI: queue show
+2018-07-01 19:53:42.958438781 +0200 EET m=+3379.475776643: 127.0.0.1:57886, Executing CLI: queue show
+2018-07-01 19:54:33.515101644 +0200 EET m=+3430.032439496: 127.0.0.1:57902, Executing CLI: queue show
+2018-07-01 19:54:33.997419781 +0200 EET m=+3430.514757669: 127.0.0.1:57902, Executing CLI: queue show
+2018-07-01 19:55:24.546390625 +0200 EET m=+3481.063728511: 127.0.0.1:57910, Executing CLI: queue show
+2018-07-01 19:55:25.033215077 +0200 EET m=+3481.550552929: 127.0.0.1:57910, Executing CLI: queue show
+2018-07-01 19:56:15.667668924 +0200 EET m=+3532.185006830: 127.0.0.1:57924, Executing CLI: queue show
+2018-07-01 19:56:16.237790669 +0200 EET m=+3532.755128521: 127.0.0.1:57924, Executing CLI: queue show
+2018-07-01 19:57:06.779813425 +0200 EET m=+3583.297151379: 127.0.0.1:57940, Executing CLI: queue show
+2018-07-01 19:57:07.273558241 +0200 EET m=+3583.790896093: 127.0.0.1:57940, Executing CLI: queue show
+2018-07-01 19:57:57.819786457 +0200 EET m=+3634.337124391: 127.0.0.1:57954, Executing CLI: queue show
+2018-07-01 19:57:58.310163684 +0200 EET m=+3634.827501586: 127.0.0.1:57954, Executing CLI: queue show
+2018-07-01 19:58:48.860784454 +0200 EET m=+3685.378122312: 127.0.0.1:57966, Executing CLI: queue show
+2018-07-01 19:58:49.345031828 +0200 EET m=+3685.862369722: 127.0.0.1:57966, Executing CLI: queue show
+2018-07-01 19:59:39.974734016 +0200 EET m=+3736.492071902: 127.0.0.1:57978, Executing CLI: queue show
+2018-07-01 19:59:40.555432871 +0200 EET m=+3737.072770737: 127.0.0.1:57978, Executing CLI: queue show
+2018-07-01 20:00:31.111580662 +0200 EET m=+3787.628918560: 127.0.0.1:57992, Executing CLI: queue show
+2018-07-01 20:00:31.802231809 +0200 EET m=+3788.319569712: 127.0.0.1:57992, Executing CLI: queue show
+2018-07-01 20:01:22.533463042 +0200 EET m=+3839.050800922: 127.0.0.1:58004, Executing CLI: queue show
+2018-07-01 20:01:23.021062543 +0200 EET m=+3839.538400411: 127.0.0.1:58004, Executing CLI: queue show
+2018-07-01 20:02:13.570295993 +0200 EET m=+3890.087633853: 127.0.0.1:58018, Executing CLI: queue show
+2018-07-01 20:02:14.05563391 +0200 EET m=+3890.572971792: 127.0.0.1:58018, Executing CLI: queue show
+2018-07-01 20:03:04.596052924 +0200 EET m=+3941.113390804: 127.0.0.1:58030, Executing CLI: queue show
+2018-07-01 20:03:05.083545236 +0200 EET m=+3941.600883124: 127.0.0.1:58030, Executing CLI: queue show
+2018-07-01 20:03:55.720911477 +0200 EET m=+3992.238249331: 127.0.0.1:58044, Executing CLI: queue show
+2018-07-01 20:03:56.286781348 +0200 EET m=+3992.804119226: 127.0.0.1:58044, Executing CLI: queue show
+2018-07-01 20:04:46.839900895 +0200 EET m=+4043.357238748: 127.0.0.1:58056, Executing CLI: queue show
+2018-07-01 20:04:47.383215205 +0200 EET m=+4043.900553061: 127.0.0.1:58056, Executing CLI: queue show
+2018-07-01 20:05:37.921630305 +0200 EET m=+4094.438968163: 127.0.0.1:58070, Executing CLI: queue show
+2018-07-01 20:05:38.409586736 +0200 EET m=+4094.926924604: 127.0.0.1:58070, Executing CLI: queue show
+2018-07-01 20:06:28.955663407 +0200 EET m=+4145.473001285: 127.0.0.1:58088, Executing CLI: queue show
+2018-07-01 20:06:29.447444705 +0200 EET m=+4145.964782565: 127.0.0.1:58088, Executing CLI: queue show
+2018-07-01 20:07:19.986733813 +0200 EET m=+4196.504071874: 127.0.0.1:58098, Executing CLI: queue show
+2018-07-01 20:07:20.474344847 +0200 EET m=+4196.991682713: 127.0.0.1:58098, Executing CLI: queue show
+2018-07-01 20:08:11.017997786 +0200 EET m=+4247.535335652: 127.0.0.1:58112, Executing CLI: queue show
+2018-07-01 20:08:11.512475913 +0200 EET m=+4248.029813775: 127.0.0.1:58112, Executing CLI: queue show
+2018-07-01 20:09:02.160730353 +0200 EET m=+4298.678068207: 127.0.0.1:58126, Executing CLI: queue show
+2018-07-01 20:09:02.691168933 +0200 EET m=+4299.208506818: 127.0.0.1:58126, Executing CLI: queue show
+2018-07-01 20:09:53.288507101 +0200 EET m=+4349.805844981: 127.0.0.1:58138, Executing CLI: queue show
+2018-07-01 20:09:53.869475204 +0200 EET m=+4350.386813092: 127.0.0.1:58138, Executing CLI: queue show
+2018-07-01 20:10:44.426617502 +0200 EET m=+4400.943955364: 127.0.0.1:58150, Executing CLI: queue show
+2018-07-01 20:10:44.912389843 +0200 EET m=+4401.429727697: 127.0.0.1:58150, Executing CLI: queue show
+2018-07-01 20:11:35.458215296 +0200 EET m=+4451.975553154: 127.0.0.1:58162, Executing CLI: queue show
+2018-07-01 20:11:35.945518189 +0200 EET m=+4452.462856066: 127.0.0.1:58162, Executing CLI: queue show
+2018-07-01 20:12:26.50323141 +0200 EET m=+4503.020569322: 127.0.0.1:58176, Executing CLI: queue show
+2018-07-01 20:12:26.987332893 +0200 EET m=+4503.504670749: 127.0.0.1:58176, Executing CLI: queue show
+2018-07-01 20:13:17.538549094 +0200 EET m=+4554.055886972: 127.0.0.1:58190, Executing CLI: queue show
+2018-07-01 20:13:18.026316181 +0200 EET m=+4554.543654051: 127.0.0.1:58190, Executing CLI: queue show
+2018-07-01 20:14:08.570592473 +0200 EET m=+4605.087930345: 127.0.0.1:58204, Executing CLI: queue show
+2018-07-01 20:14:09.061459483 +0200 EET m=+4605.578797337: 127.0.0.1:58204, Executing CLI: queue show
+2018-07-01 20:14:59.700592175 +0200 EET m=+4656.217930029: 127.0.0.1:58210, Executing CLI: queue show
+2018-07-01 20:15:00.275606479 +0200 EET m=+4656.792944341: 127.0.0.1:58210, Executing CLI: queue show
+2018-07-01 20:15:50.818022481 +0200 EET m=+4707.335360367: 127.0.0.1:58228, Executing CLI: queue show
+2018-07-01 20:15:51.313658868 +0200 EET m=+4707.830996748: 127.0.0.1:58228, Executing CLI: queue show
+2018-07-01 20:16:41.880884992 +0200 EET m=+4758.398222898: 127.0.0.1:58242, Executing CLI: queue show
+2018-07-01 20:16:42.664454301 +0200 EET m=+4759.181792157: 127.0.0.1:58242, Executing CLI: queue show
+2018-07-01 20:17:33.417985471 +0200 EET m=+4809.935323377: 127.0.0.1:58266, Executing CLI: queue show
+2018-07-01 20:17:34.018263402 +0200 EET m=+4810.535601312: 127.0.0.1:58266, Executing CLI: queue show
+2018-07-01 20:18:24.582511556 +0200 EET m=+4861.099849438: 127.0.0.1:58280, Executing CLI: queue show
+2018-07-01 20:18:25.174017832 +0200 EET m=+4861.691355684: 127.0.0.1:58280, Executing CLI: queue show
