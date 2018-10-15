@@ -29,7 +29,6 @@ func main() {
 	http.HandleFunc("/GetFile", GetFile)
 	http.HandleFunc("/ModifyFile", modifyFile)
 	http.HandleFunc("/GetLogTail", getLogTail)
-	http.HandleFunc("/ReplaceFile", replaceFile)
 
 	// Binary File upload/download
 	http.HandleFunc("/ReceiveFile", receiveFile)

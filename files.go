@@ -173,57 +173,6 @@ func modifyFile(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func replaceFile(w http.ResponseWriter, r *http.Request) {
-
-	type JSONRequest struct {
-		Filename string
-		Content  string
-	}
-
-	type JSONResult struct {
-		Success   bool   `json:"success"`
-		Errorcode int    `json:"errorcode"`
-		Result    string `json:"result"`
-		Message   string `json:"message"`
-	}
-
-	result := JSONResult{true, 0, "", ""}
-
-	w.Header().Add("Content-Type", "text/html")
-
-	body, _ := ioutil.ReadAll(r.Body)
-	var jrequest JSONRequest
-	er := json.Unmarshal(body, &jrequest)
-	if er != nil {
-		result.Success = false
-		result.Errorcode = 1
-		result.Message = er.Error()
-	} else {
-
-		// write into file
-		fileName := jrequest.Filename
-		if !strings.Contains(fileName, "/") {
-			fileName = "/etc/asterisk/" + fileName
-			writeLog(fileName)
-		}
-		f, er := os.Create(fileName)
-		if er == nil {
-
-			f.WriteString(jrequest.Content)
-		} else {
-			result.Success = false
-			result.Errorcode = 2
-			result.Message = er.Error()
-		}
-		f.Close()
-	}
-
-	output, _ := json.Marshal(result)
-
-	w.Write(output)
-
-}
-
 func downloadFile(w http.ResponseWriter, r *http.Request) {
 
 	type JSONRequest struct {
