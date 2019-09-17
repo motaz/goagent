@@ -1,7 +1,6 @@
 package main
 
 import (
-	"database/sql"
 	"encoding/json"
 	"net/http"
 
@@ -31,22 +30,19 @@ func returnError(w http.ResponseWriter, errorMessage string) {
 	w.Write(output)
 }
 
-func GetLastCDR(w http.ResponseWriter, r *http.Request) {
+func getLastCDR(w http.ResponseWriter, r *http.Request) {
 
-	cdrdbserver := getConfigValueLocal("cdrdbserver")
 	cdrdatabase := getConfigValueLocal("cdrdatabase")
-	cdruser := getConfigValueLocal("cdruser")
-	cdrpass := getConfigValueLocal("cdrpass")
+
 	cdrtable := getConfigValueLocal("cdrtable")
 	cdrkeyfield := getConfigValueLocal("cdrkeyfield")
 	if cdrkeyfield == "" {
 		cdrkeyfield = "calldate"
 	}
 
-	w.Header().Add("Content-Type", "text/html")
-	connection := cdruser + ":" + cdrpass + "@tcp(" + cdrdbserver + ":3306)/" + cdrdatabase + "?charset=utf8"
+	w.Header().Add("Content-Type", "application/json")
 
-	db, err := sql.Open("mysql", connection)
+	db, err := getMySQLConnection(cdrdatabase)
 	if err != nil {
 		println(err.Error())
 		writeLog("Error in GetLastCDR db connection: " + err.Error())

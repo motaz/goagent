@@ -26,7 +26,7 @@ func ListFiles(w http.ResponseWriter, r *http.Request) {
 		Files     []string `json:"files"`
 	}
 
-	w.Header().Add("Content-Type", "text/html")
+	w.Header().Add("Content-Type", "application/json")
 
 	body, _ := ioutil.ReadAll(r.Body)
 	var jsonRequest JSONRequest
@@ -206,7 +206,7 @@ func downloadFile(w http.ResponseWriter, r *http.Request) {
 	if strings.Contains(onlyfilename, ".gsm") {
 		namepart = onlyfilename[0:strings.Index(onlyfilename, ".")]
 		command := "sox " + afilename + " /tmp/" + namepart + ".wav"
-		Shell(command)
+		execShell(command)
 
 		afilename = "/tmp/" + namepart + ".wav"
 	}
@@ -493,9 +493,10 @@ func receiveFile(w http.ResponseWriter, r *http.Request) {
 		Errorcode int    `json:"errorcode"`
 		Result    string `json:"result"`
 		Message   string `json:"message"`
+		Filename  string `json:"filename"`
 	}
 
-	result := JSONResult{true, 0, "", ""}
+	result := JSONResult{true, 0, "", "", ""}
 
 	w.Header().Add("Content-Type", "text/html")
 
@@ -538,9 +539,19 @@ func receiveFile(w http.ResponseWriter, r *http.Request) {
 		if needConversion {
 			namepart := jrequest.Filename[0:strings.Index(jrequest.Filename, ".")]
 			command := "sox " + fileName + " " + jrequest.Dir + namepart + ".gsm"
-			Shell(command)
+			outputresult, err := execShell(command)
+			if err != "" {
+				result.Message = err
+				if strings.Contains(strings.ToLower(err), "fail") {
+					result.Success = false
+				} else {
+					result.Message = "file has been converted to : " + namepart + ".gsm, " + outputresult
+				}
+			}
+		} else {
+			result.Message = "uploaded succesfully"
 		}
-		result.Message = "written"
+		result.Filename = fileName
 	}
 
 	output, _ := json.Marshal(result)

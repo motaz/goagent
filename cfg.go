@@ -33,8 +33,9 @@ import (
 	"regexp"
 	"strings"
 
-	"CodeConfig"
 	"io/ioutil"
+
+	"github.com/motaz/codeutils"
 )
 
 var re *regexp.Regexp
@@ -46,7 +47,7 @@ func init() {
 
 func GetConfigValue(configFile, name string) string {
 
-	return CodeConfig.GetConfigValue(configFile, name)
+	return codeutils.GetConfigValue(configFile, name)
 
 }
 func setConfigParameter(configfile string, param string, value string) string {

@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-func Shell(command string) (string, string) {
+func execShell(command string) (string, string) {
 
 	var out bytes.Buffer
 	var err bytes.Buffer
@@ -18,14 +18,17 @@ func Shell(command string) (string, string) {
 	cmd.Stdout = &out
 	cmd.Stderr = &err
 	cmd.Run()
+	println("Result: ", out.String())
+
+	println("Error:  ", err.String())
 	return out.String(), err.String()
 }
 
-func ExecCLIAsAMI(command string, remoteAddress string) (string, string) {
+func execCLIAsAMI(command string, remoteAddress string) (string, string) {
 
 	// Has been changed to AMI Call
 	command = "action:command\ncommand:" + command
-	result := ActualAMICall("", "", command)
+	result := actualAMICall("", "", command)
 
 	//result.Message = strings.Replace(result.Message, "\n", "\n\r", -1)
 	if strings.Contains(result.Message, "Privilege:") {
@@ -38,13 +41,13 @@ func ExecCLIAsAMI(command string, remoteAddress string) (string, string) {
 	return result.Message, err
 }
 
-func ExecCLI(command string, remoteAddress string) (string, string) {
+func execCLI(command string, remoteAddress string) (string, string) {
 	writeLog(remoteAddress + ", Executing CLI: " + command)
-	result, err := Shell("/usr/sbin/asterisk -rx '" + command + "'")
+	result, err := execShell("/usr/sbin/asterisk -rx '" + command + "'")
 	return result, err
 }
 
-func CopyFile(src, dst string) string {
+func copyFile(src, dst string) string {
 	in, err := os.Open(src)
 	if err != nil {
 		return "source error: " + err.Error()
@@ -66,7 +69,7 @@ func CopyFile(src, dst string) string {
 func backupFile(sourceFileName string) {
 
 	t := time.Now()
-	var atime string = t.Format("060102_150405")
+	atime := t.Format("060102_150405")
 
 	// Check backup directory
 	path := "/etc/asterisk/backup/"
@@ -74,11 +77,20 @@ func backupFile(sourceFileName string) {
 		os.Mkdir(path, 0777)
 	}
 
-	err := CopyFile("/etc/asterisk/"+sourceFileName, "/etc/asterisk/backup/"+sourceFileName+"."+atime)
+	err := copyFile("/etc/asterisk/"+sourceFileName, "/etc/asterisk/backup/"+sourceFileName+"."+atime)
 	if err != "" {
 		writeLog("Error while copy: " + err)
 	}
 
+}
+
+func getConfigValueDefault(name string, defaultValue string) (val string) {
+
+	val = getConfigValueLocal(name)
+	if val == "" {
+		val = defaultValue
+	}
+	return
 }
 
 func getConfigValueLocal(name string) string {

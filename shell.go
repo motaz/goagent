@@ -21,7 +21,7 @@ func command(w http.ResponseWriter, r *http.Request) {
 
 	result := JSONResult{true, 0, "", ""}
 
-	w.Header().Add("Content-Type", "text/html")
+	w.Header().Add("Content-Type", "application/json")
 
 	body, err := ioutil.ReadAll(r.Body)
 	if err != nil {
@@ -39,7 +39,7 @@ func command(w http.ResponseWriter, r *http.Request) {
 			result.Message = er.Error()
 		} else {
 
-			resultStr, err := ExecCLI(c.Command, r.RemoteAddr)
+			resultStr, err := execCLI(c.Command, r.RemoteAddr)
 			if err != "" {
 				result.Success = false
 				result.Errorcode = 6
@@ -86,7 +86,7 @@ func getLogTail(w http.ResponseWriter, r *http.Request) {
 
 		}
 
-		resultStr, err := Shell("tail --lines=" + logR.Lines + " " + logR.File)
+		resultStr, err := execShell("tail --lines=" + logR.Lines + " " + logR.File)
 		if err == "" {
 			result.Content = resultStr
 		} else {
@@ -133,7 +133,7 @@ func executeShell(w http.ResponseWriter, r *http.Request) {
 			result.Message = er.Error()
 		} else {
 
-			resultStr, err := Shell(c.Command)
+			resultStr, err := execShell(c.Command)
 			if err != "" {
 				result.Success = false
 				result.Errorcode = 6

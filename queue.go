@@ -5,11 +5,11 @@ import (
 	"strings"
 )
 
-func WaitingCount(w http.ResponseWriter, r *http.Request) {
+func getWaitingCount(w http.ResponseWriter, r *http.Request) {
 
 	queue := r.FormValue("queue")
 
-	result := ActualAMICall("", "", "action:command\ncommand:queue show "+queue)
+	result := actualAMICall("", "", "action:command\ncommand:queue show "+queue)
 	res := "0"
 	if result.Success {
 		line := result.Message

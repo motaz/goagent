@@ -25,7 +25,7 @@ func addAgent(w http.ResponseWriter, r *http.Request) {
 
 	result := JSONResult{true, 0, "", ""}
 
-	w.Header().Add("Content-Type", "text/html")
+	w.Header().Add("Content-Type", "application/json")
 
 	body, _ := ioutil.ReadAll(r.Body)
 	var jrequest JSONRequest
@@ -102,7 +102,7 @@ func removeAgent(w http.ResponseWriter, r *http.Request) {
 		f, er := os.Create(fileName)
 
 		if er == nil {
-			var found bool = false
+			found := false
 
 			// Write contents without desired agent
 			for i := 0; i < len(lines); i++ {

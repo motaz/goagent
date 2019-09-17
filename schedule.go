@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func IsWorkingTime(w http.ResponseWriter, r *http.Request) {
+func getIsWorkingTime(w http.ResponseWriter, r *http.Request) {
 
 	schedule := r.FormValue("schedule")
 	if schedule != "" {
@@ -21,8 +21,9 @@ func IsWorkingTime(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func isWorkingTime(file string) bool {
+func isWorkingTime(file string) (result bool) {
 
+	result = false
 	now := time.Now()
 	aday := int(now.Weekday()) + 1
 	data := GetConfigValue(file, strconv.Itoa(aday))
@@ -38,12 +39,9 @@ func isWorkingTime(file string) bool {
 		ftime := time.Date(now.Year(), now.Month(), now.Day(), fromTime.Hour(), fromTime.Minute(), 0, 0, time.Local)
 		ttime := time.Date(now.Year(), now.Month(), now.Day(), toTime.Hour(), toTime.Minute(), 59, 999, time.Local)
 		if now.After(ftime) && (now.Before(ttime)) {
-			return true
-		} else {
-			return false
+			result = true
 		}
-	} else {
-		return false
 	}
+	return
 
 }

@@ -2,7 +2,7 @@
 // SimpleTrunk web service to manage Asterisk
 // Origional code written by Motaz Abdel Azim
 // Start development:    26-Jan-2017
-// Last update 		  16.March.2017
+// Last update 		     27.May.2019
 
 package main
 
@@ -11,8 +11,9 @@ import (
 )
 
 func main() {
-
-	writeLog("GoAgent has started..")
+	version := "1.1.0"
+	println("GoAgent version: " + version)
+	writeLog("GoAgent version: " + version + " has started..")
 
 	// Commands
 	http.HandleFunc("/Command", command)    // CLI command
@@ -41,7 +42,7 @@ func main() {
 	http.HandleFunc("/BackupFiles", BackupFiles)
 
 	// Databases
-	http.HandleFunc("/GetLastCDR", GetLastCDR)
+	http.HandleFunc("/GetLastCDR", getLastCDR)
 
 	//CDR
 	http.HandleFunc("/SetCDRConf", CDRConf)
@@ -51,22 +52,30 @@ func main() {
 	http.HandleFunc("/ModifyCDRConf", ModifyCDRConf)
 
 	//AMI Configuration
-	http.HandleFunc("/GetAMIStatus", GetAMIStatus)
-	http.HandleFunc("/GetAMIUsersInfo", GetAMIUsersinfo)
-	http.HandleFunc("/GetAMIUserInfo", GetAMIUserInfo)
-	http.HandleFunc("/AddAMIUser", AddAMIUser)
-	http.HandleFunc("/ModifyAMIUser", ModifyAMIUser)
+	http.HandleFunc("/GetAMIStatus", getAMIStatus)
+	http.HandleFunc("/GetAMIUsersInfo", getAMIUsersinfo)
+	http.HandleFunc("/GetAMIUserInfo", getAMIUserInfo)
+	http.HandleFunc("/AddAMIUser", addAMIUser)
+	http.HandleFunc("/ModifyAMIUser", modifyAMIUser)
 
 	//Schedule
-	http.HandleFunc("/IsWorkingTime", IsWorkingTime)
+	http.HandleFunc("/IsWorkingTime", getIsWorkingTime)
 
 	// Queue waiting count
-	http.HandleFunc("/WaitingCount", WaitingCount)
+	http.HandleFunc("/WaitingCount", getWaitingCount)
+
+	// Control Objects
+	http.HandleFunc("/SetControlObject", setControlObject)
+	http.HandleFunc("/RemoveControlObject", removeControlObject)
 
 	//Test
 	http.HandleFunc("/Test", test)
 
-	err := http.ListenAndServe(":9091", nil)
+	// HTTP server
+	port := getConfigValueDefault("port", "9091")
+
+	println("Listening on port: " + port)
+	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
 		writeLog("Error in ListenAndServe: " + err.Error())
 	}

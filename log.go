@@ -18,7 +18,7 @@ func writeLog(event string) {
 	t := time.Now()
 	today := t.Day()
 	old := false
-	var dir string = getCurrentDir() + string(os.PathSeparator) + "log"
+	dir := getCurrentDir() + string(os.PathSeparator) + "log"
 	st, err := os.Stat(dir)
 	if (err != nil) && (os.IsNotExist(err)) {
 		os.Mkdir(dir, 0777)
@@ -28,7 +28,7 @@ func writeLog(event string) {
 			old = true
 		}
 	}
-	var logname string = dir + string(os.PathSeparator) + "goagent-" + strconv.Itoa(today) + ".log"
+	 logname := dir + string(os.PathSeparator) + "goagent-" + strconv.Itoa(today) + ".log"
 	var f *os.File
 	if old {
 		f, _ = os.OpenFile(logname, os.O_CREATE|os.O_RDWR, 0666)

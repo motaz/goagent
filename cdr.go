@@ -24,11 +24,11 @@ func CDRConf(w http.ResponseWriter, r *http.Request) {
 		Result    string `json:"result"`
 		Message   string `json:"message"`
 	}
-	dpath, _ := Shell("locate libmyodbc.so")
-	spath, _ := Shell("locate libodbcmyS.so")
+	dpath, _ := execShell("locate libmyodbc.so")
+	spath, _ := execShell("locate libodbcmyS.so")
 	result := JSONResult{true, 0, "", ""}
 
-	w.Header().Add("Content-Type", "text/html")
+	w.Header().Add("Content-Type", "application/json")
 
 	body, _ := ioutil.ReadAll(r.Body)
 	var jrequest JSONRequest
@@ -86,7 +86,7 @@ func CDRConf(w http.ResponseWriter, r *http.Request) {
 				setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrdatabase", dname)
 				setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrtable", cdrtab)
 				setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrkeyfield", cdrkey)
-				ExecCLI("core reload", r.RemoteAddr)
+				execCLI("core reload", r.RemoteAddr)
 			}
 		} else {
 
@@ -170,7 +170,7 @@ func ModifyCDRConf(w http.ResponseWriter, r *http.Request) {
 			setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrdatabase", dname)
 			setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrtable", cdrtab)
 			setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrkeyfield", cdrkey)
-			ExecCLI("core reload", r.RemoteAddr)
+			execCLI("core reload", r.RemoteAddr)
 		}
 	}
 	output, _ := json.Marshal(result)
@@ -226,7 +226,7 @@ func GetCDRConfStatus(w http.ResponseWriter, r *http.Request) {
 	}
 	result := JSONResult{true, 0, "", ""}
 	w.Header().Add("Content-Type", "text/html")
-	rs, _ := ExecCLI("odbc show all", r.RemoteAddr)
+	rs, _ := execCLI("odbc show all", r.RemoteAddr)
 	if !strings.Contains(rs, "Connected: Yes") {
 		result.Success = false
 		result.Errorcode = 1
