@@ -2,14 +2,23 @@ package main
 
 import (
 	"encoding/json"
+
 	"io/ioutil"
 	"net/http"
 )
 
+func convertToAMI(command string) (amiCommand string) {
+
+	amiCommand = "action:command\ncommand:" + command
+	return
+}
+
 func command(w http.ResponseWriter, r *http.Request) {
 
 	type Command struct {
-		Command string
+		Command  string
+		Username string
+		Secret   string
 	}
 
 	type JSONResult struct {
@@ -38,14 +47,16 @@ func command(w http.ResponseWriter, r *http.Request) {
 			result.Errorcode = 5
 			result.Message = er.Error()
 		} else {
-
-			resultStr, err := execCLI(c.Command, r.RemoteAddr)
+			resultStr, err := execCLI(c.Command, c.Username, c.Secret, r.RemoteAddr)
 			if err != "" {
 				result.Success = false
 				result.Errorcode = 6
 				result.Message = err
+			} else {
+				result.Errorcode = 0
+				result.Success = true
+				result.Result = resultStr
 			}
-			result.Result = resultStr
 		}
 
 	}

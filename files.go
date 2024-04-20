@@ -538,7 +538,7 @@ func receiveFile(w http.ResponseWriter, r *http.Request) {
 		// Convert to GSM
 		if needConversion {
 			namepart := jrequest.Filename[0:strings.Index(jrequest.Filename, ".")]
-			command := "sox " + fileName + " " + jrequest.Dir + namepart + ".gsm"
+			command := "sox " + fileName + " -r 8000 -c1 " + jrequest.Dir + namepart + ".gsm lowpass 4000 compand 0.02,0.05 -60,-60,-30,-10,-20,-8,-5,-8,-2,-8 -8 -7 0.05"
 			outputresult, err := execShell(command)
 			if err != "" {
 				result.Message = err

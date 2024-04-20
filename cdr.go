@@ -80,13 +80,13 @@ func CDRConf(w http.ResponseWriter, r *http.Request) {
 				result.Message = err
 				writeLog("Error in CDRConf: " + err)
 			} else {
-				setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrdbserver", ser)
-				setConfigParameter("/etc/simpletrunk/stagent.ini", "cdruser", duname)
-				setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrpass", dpass)
-				setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrdatabase", dname)
-				setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrtable", cdrtab)
-				setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrkeyfield", cdrkey)
-				execCLI("core reload", r.RemoteAddr)
+				setConfigParameter("config.ini", "cdrdbserver", ser)
+				setConfigParameter("config.ini", "cdruser", duname)
+				setConfigParameter("config.ini", "cdrpass", dpass)
+				setConfigParameter("config.ini", "cdrdatabase", dname)
+				setConfigParameter("config.ini", "cdrtable", cdrtab)
+				setConfigParameter("config.ini", "cdrkeyfield", cdrkey)
+				execCLI("core reload", "", "", r.RemoteAddr)
 			}
 		} else {
 
@@ -103,6 +103,7 @@ func CDRConf(w http.ResponseWriter, r *http.Request) {
 	w.Write(output)
 
 }
+
 func ModifyCDRConf(w http.ResponseWriter, r *http.Request) {
 	var err string
 	type JSONRequest struct {
@@ -164,13 +165,13 @@ func ModifyCDRConf(w http.ResponseWriter, r *http.Request) {
 			result.Message = err
 			writeLog("Error in CDRConf: " + err)
 		} else {
-			setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrdbserver", ser)
-			setConfigParameter("/etc/simpletrunk/stagent.ini", "cdruser", duname)
-			setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrpass", dpass)
-			setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrdatabase", dname)
-			setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrtable", cdrtab)
-			setConfigParameter("/etc/simpletrunk/stagent.ini", "cdrkeyfield", cdrkey)
-			execCLI("core reload", r.RemoteAddr)
+			setConfigParameter("config.ini", "cdrdbserver", ser)
+			setConfigParameter("config.ini", "cdruser", duname)
+			setConfigParameter("config.ini", "cdrpass", dpass)
+			setConfigParameter("config.ini", "cdrdatabase", dname)
+			setConfigParameter("config.ini", "cdrtable", cdrtab)
+			setConfigParameter("config.ini", "cdrkeyfield", cdrkey)
+			execCLI("core reload", "", "", r.RemoteAddr)
 		}
 	}
 	output, _ := json.Marshal(result)
@@ -226,7 +227,7 @@ func GetCDRConfStatus(w http.ResponseWriter, r *http.Request) {
 	}
 	result := JSONResult{true, 0, "", ""}
 	w.Header().Add("Content-Type", "text/html")
-	rs, _ := execCLI("odbc show all", r.RemoteAddr)
+	rs, _ := execCLI("odbc show all", "", "", r.RemoteAddr)
 	if !strings.Contains(rs, "Connected: Yes") {
 		result.Success = false
 		result.Errorcode = 1

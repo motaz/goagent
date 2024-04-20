@@ -2,14 +2,23 @@ package main
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"os"
 	"os/exec"
 	"strings"
 	"time"
+
+	"github.com/motaz/codeutils"
 )
 
-func execShell(command string) (string, string) {
+func writeLog(event string) {
+
+	codeutils.WriteToLog(event, "goagent")
+
+}
+
+func execShell(command string) (result string, errMessage string) {
 
 	var out bytes.Buffer
 	var err bytes.Buffer
@@ -18,22 +27,22 @@ func execShell(command string) (string, string) {
 	cmd.Stdout = &out
 	cmd.Stderr = &err
 	cmd.Run()
-	println("Result: ", out.String())
-
-	println("Error:  ", err.String())
-	return out.String(), err.String()
+	fmt.Println("out: ", out.String())
+	result = out.String()
+	if result == "" {
+		errMessage = err.String()
+	} else if strings.Contains(result, "No such") {
+		errMessage = result
+	}
+	return
 }
 
-func execCLIAsAMI(command string, remoteAddress string) (string, string) {
+func execCLIAsAMI(command, amiuser, amipass string, remoteAddress string) (string, string) {
 
 	// Has been changed to AMI Call
 	command = "action:command\ncommand:" + command
-	result := actualAMICall("", "", command)
+	result := actualAMICall(command, amiuser, amipass)
 
-	//result.Message = strings.Replace(result.Message, "\n", "\n\r", -1)
-	if strings.Contains(result.Message, "Privilege:") {
-		result.Message = result.Message[strings.Index(result.Message, "Privilege:")+19:]
-	}
 	err := ""
 	if !result.Success {
 		err = result.Message
@@ -41,9 +50,16 @@ func execCLIAsAMI(command string, remoteAddress string) (string, string) {
 	return result.Message, err
 }
 
-func execCLI(command string, remoteAddress string) (string, string) {
-	writeLog(remoteAddress + ", Executing CLI: " + command)
-	result, err := execShell("/usr/sbin/asterisk -rx '" + command + "'")
+func execCLI(command, amiuser, amipass string, remoteAddress string) (string, string) {
+
+	result, err := execCLIAsAMI(command, amiuser, amipass, remoteAddress)
+	if err != "" && strings.Contains(command, "reload") ||
+		strings.Contains(command, "manager") || strings.Contains(command, "http") {
+		writeLog(remoteAddress + ", Switching to CLI: " + command)
+
+		result, err = execShell("/usr/sbin/asterisk -rx '" + command + "'")
+	}
+
 	return result, err
 }
 
@@ -95,7 +111,7 @@ func getConfigValueDefault(name string, defaultValue string) (val string) {
 
 func getConfigValueLocal(name string) string {
 
-	val := GetConfigValue("/etc/simpletrunk/stagent.ini", name)
+	val := codeutils.GetConfigValue("config.ini", name)
 	val = strings.Replace(val, "\r", "", -1)
 	return val
 }

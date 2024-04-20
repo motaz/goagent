@@ -7,12 +7,13 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 )
 
 func main() {
-	version := "1.1.0"
-	println("GoAgent version: " + version)
+	version := "1.1.1 r29Sept"
+	fmt.Println("GoAgent version: " + version)
 	writeLog("GoAgent version: " + version + " has started..")
 
 	// Commands
@@ -74,9 +75,10 @@ func main() {
 	// HTTP server
 	port := getConfigValueDefault("port", "9091")
 
-	println("Listening on port: " + port)
+	fmt.Println("Listening on port: " + port)
 	err := http.ListenAndServe(":"+port, nil)
 	if err != nil {
+
 		writeLog("Error in ListenAndServe: " + err.Error())
 	}
 	writeLog("GoAgent has closed")

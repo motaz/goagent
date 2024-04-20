@@ -5,6 +5,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/motaz/codeutils"
 )
 
 func getIsWorkingTime(w http.ResponseWriter, r *http.Request) {
@@ -26,7 +28,7 @@ func isWorkingTime(file string) (result bool) {
 	result = false
 	now := time.Now()
 	aday := int(now.Weekday()) + 1
-	data := GetConfigValue(file, strconv.Itoa(aday))
+	data := codeutils.GetConfigValue(file, strconv.Itoa(aday))
 	if data != "" {
 		data = strings.TrimSpace(data)
 		from := data[:strings.Index(data, " ")]

@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"encoding/json"
+
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -24,6 +25,10 @@ func callURL(url string, session string) (string, string) {
 	req, err := http.NewRequest("GET", url, nil)
 	if session != "" {
 		req.Header.Add("Cookie", session)
+	}
+
+	if url == "" {
+		return "empty URL", ""
 	}
 	resp, err := client.Do(req)
 
@@ -72,7 +77,7 @@ func CallAMI(w http.ResponseWriter, r *http.Request) {
 			result.Message = er.Error()
 			writeLog("Error in CallAMI: " + result.Message)
 		} else {
-			result = actualAMICall(jsonRequest.Username, jsonRequest.Secret, jsonRequest.Command)
+			result = actualAMICall(jsonRequest.Command, jsonRequest.Username, jsonRequest.Secret)
 
 		}
 
@@ -86,7 +91,7 @@ func getAMIStatus(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Add("Content-Type", "text/html")
 	result := AMIJSONResult{true, 0, "", ""}
-	manres, err := execCLI("manager show settings", r.RemoteAddr)
+	manres, err := execCLI("manager show settings", "", "", r.RemoteAddr)
 	if err != "" {
 		result.Success = false
 		result.Errorcode = 1
@@ -104,7 +109,7 @@ func getAMIStatus(w http.ResponseWriter, r *http.Request) {
 	if !strings.Contains(manres, "Manager (AMI):             Yes") && !strings.Contains(manres, "Web Manager (AMI/HTTP):    Yes") {
 		result.Result = "notok:notok"
 	}
-	httpres, err2 := execCLI("http show status", r.RemoteAddr)
+	httpres, err2 := execCLI("http show status", "", "", r.RemoteAddr)
 	if err2 != "" {
 		result.Success = false
 		result.Errorcode = 1
@@ -122,17 +127,17 @@ func getAMIStatus(w http.ResponseWriter, r *http.Request) {
 	w.Write(output)
 }
 
-func actualAMICall(username string, secret string, acommand string) AMIJSONResult {
+func actualAMICall(acommand, username, secret string) AMIJSONResult {
 
 	if username == "" {
-		username = GetConfigValue("/etc/simpletrunk/stagent.ini", "amiusername")
-		secret = GetConfigValue("/etc/simpletrunk/stagent.ini", "amisecret")
+		username = getConfigValueLocal("amiusername")
+		secret = getConfigValueLocal("amisecret")
 	}
-	amiurl := GetConfigValue("/etc/simpletrunk/stagent.ini", "amiurl")
+
+	amiurl := getConfigValueLocal("amiurl")
 	if amiurl[len(amiurl)-1] != '/' {
 		amiurl = amiurl + "/"
 	}
-
 	// execute command
 	fullURL := amiurl + "?action=login&username=" + username + "&secret=" + secret
 	resultStr, session := callURL(fullURL, "")
@@ -299,7 +304,7 @@ func addAMIUser(w http.ResponseWriter, r *http.Request) {
 					writeLog("Error in AddAMIUser: " + result.Message)
 				} else {
 					result.Success = true
-					execCLI("core reload", r.RemoteAddr)
+					execCLI("core reload", "", "", r.RemoteAddr)
 				}
 			} else {
 				result.Success = false
@@ -362,7 +367,7 @@ func modifyAMIUser(w http.ResponseWriter, r *http.Request) {
 					writeLog("Error in ModifyAMIUser: " + result.Message)
 				} else {
 					result.Success = true
-					execCLI("core reload", r.RemoteAddr)
+					execCLI("core reload", "", "", r.RemoteAddr)
 				}
 			} else {
 				result.Success = false
